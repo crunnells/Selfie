@@ -734,6 +734,7 @@ body {
 
 .site {
 	margin: 0 auto;
+	text-align: center;
 }
 
 .site-branding {
@@ -743,7 +744,7 @@ body {
 .site-title {
 	font-size: 36px;
 	font-size: 2.25rem;
-	text-align: center;
+	font-weight: 700;
 	margin: 0;
 }
 
@@ -754,12 +755,24 @@ body {
 
 .site-description {
 	color: #555;
-	text-align: center;
 	margin-top: 0;
 }
 
 .site-main {
 	margin: 0 5%;
+}
+
+.site-footer {
+	color: #777;
+	font-size: 12px;
+	font-size: 0.75rem;
+	margin-bottom: 3.125em;
+}
+
+.site-footer .sep {
+	display: block;
+	line-height: 0;
+	visibility: hidden;
 }
 
 /* >= 600px */
@@ -772,6 +785,12 @@ body {
 	.site-footer {
 		clear: both;
 		width: 100%;
+	}
+
+	.site-footer .sep {
+		display: inline;
+		line-height: 1;
+		visibility: visible;
 	}
 
 }
@@ -816,12 +835,11 @@ body {
 }
 
 .hentry {
-	margin: 0 0 3em;
+	margin: 0 0 5em;
 }
 
 .entry-title {
 	font-weight: 400;
-	text-align: center;
 	margin: 0;
 }
 
@@ -848,10 +866,12 @@ body {
 .entry-content,
 .entry-summary {
 	margin: 1em 0 0;
+	text-align: left;
 }
 
 .entry-footer {
-	text-align: center;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 .entry-footer a {
