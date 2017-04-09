@@ -1,4 +1,8 @@
+	<?php if ( get_header_image() ) : ?>
+		<div class="site-branding" style="background-image: url(<?php header_image(); ?>);">
+	<?php else : ?>
 		<div class="site-branding">
+	<?php endif; // End header image check. ?>
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>

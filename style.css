@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Infinite scroll
 # Media
 	## Galleries
+# Media Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -374,13 +375,19 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	margin: 0 0 1.5em;
+	word-wrap: break-word;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
 	font-style: italic;
 }
 
 blockquote {
+	border-left: 3px solid #ccc;
+	padding-left: .75em;
 	margin: 0 1.5em;
 }
 
@@ -400,18 +407,23 @@ pre {
 	padding: 1.6em;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 15px;
 	font-size: 0.9375rem;
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted #666;
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: #fff9c0;
 	text-decoration: none;
 }
@@ -420,10 +432,15 @@ big {
 	font-size: 125%;
 }
 
-blockquote, q {
+blockquote,
+q {
 	quotes: "" "";
 }
-blockquote:before, blockquote:after, q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: "";
 }
 
@@ -446,10 +463,14 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	color: #666;
+	font-size: 14px;
+	font-size: 0.875rem;
+	padding: 6px;
 }
+
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
@@ -473,68 +494,66 @@ select {
 	border: 1px solid #ccc;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"] {
-	padding: 3px;
-}
-
 textarea {
-	padding-left: 3px;
+	padding-left: 6px;
 	width: 100%;
 }
 
 /*--------------------------------------------------------------
-# Forms
+# Buttons
 --------------------------------------------------------------*/
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	border: none;
+	border-radius: 5px;
+	background: #2b75c9;
+	color: #fff;
+	font-size: 14px;
+	font-size: 0.875rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	padding: .6em .8em;
 }
+
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	background-color: #4594ed;
+	color: #fff;
 }
-button:active, button:focus,
+
+button:active,
+button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
+	background-color: #4594ed;
+	color: #fff;
+}
+
+button[disabled],
+button[disabled]:hover,
+button[disabled]:focus,
+input[type="button"][disabled],
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="reset"][disabled],
+input[type="reset"][disabled]:hover,
+input[type="reset"][disabled]:focus,
+input[type="submit"][disabled],
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus {
+	background: #ccc;
+	color: #888;
 }
 
 /*--------------------------------------------------------------
-# Formattings
+# Formatting
 --------------------------------------------------------------*/
 hr {
 	background-color: #ccc;
@@ -547,7 +566,8 @@ hr {
 # Lists
 --------------------------------------------------------------*/
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em;
+	padding-left: 2em;
 }
 
 ul {
@@ -580,12 +600,19 @@ table {
 	width: 100%;
 }
 
+th,
+td {
+	padding: 0.4375em;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 .main-navigation {
 	clear: both;
 	display: block;
+	margin-top: 1.75em;
+	padding: 0 5%;
 	width: 100%;
 }
 
@@ -611,7 +638,8 @@ table {
 	top: 0;
 }
 
-.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
 	left: 100%;
 }
 
@@ -638,6 +666,8 @@ table {
 
 .main-navigation a {
 	display: block;
+	font-size: 14px;
+	font-size: 0.875em;
 	text-decoration: none;
 }
 
@@ -664,30 +694,73 @@ table {
 	}
 }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
+.comment-navigation,
+.posts-navigation,
 .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+.nav-links {
+	margin-left: 5%;
+	margin-right: 5%;
 }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+.nav-links a {
+	background: #2b75c9;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin: 0 0 1em 0;
+	padding: .65em 1.5em;
+	text-align: center;
+	text-decoration: none;
+}
+
+.nav-links a:hover {
+	background-color: #4594ed;
+	color: #fff;
+}
+
+.nav-links a:active,
+.nav-links a:focus {
+	background-color: #13529a;
+	color: #fff;
+}
+
+/* >= 400px */
+@media screen and (min-width: 25em) {
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: left;
+		text-align: left;
+		width: 50%;
+	}
+
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
 }
 
 .jetpack-social-navigation {
+	margin-bottom: 4.125em;
 	text-align: center;
+}
+
+.jetpack-social-navigation li {
+	padding: 0 1em;
+}
+
+.jetpack-social-navigation a {
+	font-size: 32px;
+	font-size: 2rem;
 }
 
 /*--------------------------------------------------------------
@@ -697,19 +770,21 @@ a {
 	color: #2b75c9;
 }
 
-a:visited {
-	color: #13529a;
+a:hover {
+	color: #4594ed;
 }
 
-a:hover, a:focus, a:active {
-	color: #4594ed;
+a:active,
+a:focus {
+	color: #13529a;
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	outline: 0;
 }
 
@@ -733,11 +808,15 @@ body {
 }
 
 .site {
-	margin: 0 auto;
+	margin: 0;
 	text-align: center;
 }
 
 .site-branding {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	margin-top: 1.75em;
 	padding: 2em;
 }
 
@@ -745,6 +824,7 @@ body {
 	font-size: 36px;
 	font-size: 2.25rem;
 	font-weight: 700;
+	line-height: 1.2;
 	margin: 0;
 }
 
@@ -755,76 +835,45 @@ body {
 
 .site-description {
 	color: #555;
-	margin-top: 0;
+	margin: 0;
+}
+
+.site-content {
+}
+
+.content-area {
+	background-color: #fff;
 }
 
 .site-main {
-	margin: 0 5%;
+	padding: 1.75em 0;
+}
+
+.widget-area {
+	margin-top: 4em;
+	padding: 0 5%;
 }
 
 .site-footer {
 	color: #777;
 	font-size: 12px;
 	font-size: 0.75rem;
-	margin-bottom: 3.125em;
+	margin: 3.125em 0;
+}
+
+.site-info a:link,
+.site-info a:visited {
+	color: #777;
+}
+
+.site-info a:hover {
+	color: #4594ed;
 }
 
 .site-footer .sep {
 	display: block;
 	line-height: 0;
 	visibility: hidden;
-}
-
-/* >= 600px */
-@media screen and (min-width: 37.5em) {
-
-	.site-main {
-		margin: 0;
-	}
-
-	.site-footer {
-		clear: both;
-		width: 100%;
-	}
-
-	.site-footer .sep {
-		display: inline;
-		line-height: 1;
-		visibility: visible;
-	}
-
-}
-
-/* >= 1040 */
-@media screen and (min-width: 65em) {
-	.site {
-		width: 1000px;
-	}
-
-	.site-branding {
-		padding: 3.125em;
-	}
-
-	.site-title {
-		margin: 2em 0;
-	}
-}
-
-/*--------------------------------------------------------------
-## Single Column / No Active Sidebar
---------------------------------------------------------------*/
-.no-sidebar .site-main {
-/*
-	margin: 0;
-*/
-}
-
-.no-sidebar .content-area {
-/*
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
-*/
 }
 
 /*--------------------------------------------------------------
@@ -835,12 +884,13 @@ body {
 }
 
 .hentry {
-	margin: 0 0 5em;
+	margin: 1.75em 0 5em;
 }
 
 .entry-title {
 	font-weight: 400;
 	margin: 0;
+	padding: 0 5%;
 }
 
 .entry-title a {
@@ -862,16 +912,47 @@ body {
 	display: inline;
 }
 
+.post-thumbnail {
+	margin-top: 1.4375em;
+}
+
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1em 0 0;
+	margin: 1.4375em 0 0;
 	text-align: left;
+}
+
+.entry-content h2 {
+	font-weight: 400;
+}
+
+.entry-content > * {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.entry-content > *:last-child {
+	margin-bottom: 0;
+}
+
+.entry-content .gallery,
+.entry-content .tiled-gallery {
+	margin: 0;
+}
+
+.entry-content table {
+	width: 90%;
+}
+
+.entry-content .mejs-container {
+	width: 90% !important;
 }
 
 .entry-footer {
 	font-size: 14px;
 	font-size: 0.875rem;
+	margin: 0 5%;
 }
 
 .entry-footer a {
@@ -897,12 +978,22 @@ body {
 --------------------------------------------------------------*/
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.page-links a {
+	display: inline-block;
+	padding: 0 0.25em;
 }
 
 /*--------------------------------------------------------------
 # Comments
 --------------------------------------------------------------*/
+.comments-area {
+	text-align: left;
+	margin: 0 5%;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -915,10 +1006,19 @@ body {
 # Widgets
 --------------------------------------------------------------*/
 .widget {
+	font-size: 14px;
+	font-size: 0.875rem;
 	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
+	text-align: left;
 }
 
+.widget-title {
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+/* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
 }
@@ -936,6 +1036,27 @@ body {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+#infinite-handle span {
+	background: #2b75c9;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	padding: 0.75em 1.25em;
+}
+
+.infinite-loader {
+	height: 36px;
+	margin: 0 auto;
+	position: relative;
+	width: 36px;
+}
+
+.infinite-loader .spinner div div {
+	background: rgb(43, 117, 201) !important;
 }
 
 /*--------------------------------------------------------------
@@ -1007,43 +1128,203 @@ object {
 
 .gallery-item {
 	display: inline-block;
+	margin: 0 0 .3125em 0;
+	padding-right: 2%;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
 }
 
+.gallery-columns-1 .gallery-item {
+	padding: 0;
+}
+
 .gallery-columns-2 .gallery-item {
 	max-width: 50%;
+	padding-right: 1.875%;
 }
 
 .gallery-columns-3 .gallery-item {
 	max-width: 33.33%;
+	padding-right: 1.75%;
 }
 
 .gallery-columns-4 .gallery-item {
 	max-width: 25%;
+	padding-right: 1.625%;
 }
 
 .gallery-columns-5 .gallery-item {
 	max-width: 20%;
+	padding-right: 1.5%;
 }
 
 .gallery-columns-6 .gallery-item {
 	max-width: 16.66%;
+	padding-right: 1.375%;
 }
 
 .gallery-columns-7 .gallery-item {
 	max-width: 14.28%;
+	padding-right: 1.25%;
 }
 
 .gallery-columns-8 .gallery-item {
 	max-width: 12.5%;
+	padding-right: 1.125%;
 }
 
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
+	padding-right: 1%;
 }
+
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	padding-right: 0;
+}
+
 
 .gallery-caption {
 	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.6153846154;
+	padding-top: 0.5384615385em;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+/* >= 600px */
+@media screen and (min-width: 37.5em) {
+
+	.site-main {
+		padding-top: 3.625em;
+	}
+
+	.page-content,
+	.entry-content,
+	.entry-summary {
+	}
+
+	.site-footer {
+		clear: both;
+		width: 100%;
+	}
+
+	.site-footer .sep {
+		display: inline;
+		line-height: 1;
+		visibility: visible;
+	}
+
+	.post-thumbnail {
+		margin-top: 2.375em;
+	}
+
+}
+
+/* >= 736px */
+@media screen and (min-width: 46em) {
+	.site {
+		margin: 0 5%;
+	}
+
+	.site-branding {
+		padding: 3.125em;
+	}
+
+	.page-content,
+	.entry-content,
+	.entry-summary {
+		margin-bottom: 3.625em;
+	}
+
+	.entry-content > * {
+		margin-left: 17.2%;
+		margin-right: 17.2%;
+		max-width: 656px;
+	}
+
+	.entry-content .gallery,
+	.entry-content .tiled-gallery {
+		max-width: 100%;
+	}
+
+	.size-large {
+		max-width: 100%;
+	}
+
+}
+
+/* >= 1100 */
+@media screen and (min-width: 68.75em) {
+	.site {
+		margin: 0 auto;
+		width: 1000px;
+	}
+
+	.site-branding {
+		padding: 4.125em;
+	}
+
+	.site-title {}
+
+	.site-main {
+		margin: 0;
+		padding-top: 3.5em;
+	}
+
+	.page-content,
+	.entry-content,
+	.entry-summary {
+		margin: 3em 0 3.5em;
+	}
+
+	.hentry {
+		margin-bottom: 6.5em;
+	}
+
+	.post-thumbnail {
+		margin-top: 2.875em;
+	}
+
+	.size-thumbnail {
+		max-width: 300px;
+	}
+
+	.size-medium {
+		max-width: 656px;
+	}
+
+	.size-large {
+		max-width: 1000px;
+	}
+
+	.aligncenter.size-large {
+		margin-left: -172px;
+		margin-right: -172px;
+	}
+
+	.widget-area {
+		padding: 0;
+	}
+
+	.widget {
+		float: left;
+		margin-right: 35px;
+		width: 310px;
+	}
+
+	.widget:last-child {
+		margin-right: 0;
+	}
+
 }

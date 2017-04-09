@@ -58,9 +58,26 @@ endif;
 
 if ( ! function_exists( 'selfie_entry_footer' ) ) :
 /**
- * Prints HTML with meta information for the categories and comments.
+ * Prints HTML with meta information for the post-date/time, categories, and comments.
  */
 function selfie_entry_footer() {
+	if ( ! is_sticky() ) {
+		// Posted on
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		}
+
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+
+		echo '<span class="posted-on"><span class="screen-reader-text">' . esc_html_x( 'Posted on', 'post date', 'selfie' ) . '</span> <a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
+	}
+
 	// Hide category text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -72,7 +89,7 @@ function selfie_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'selfie' ), esc_html__( '1 Comment', 'selfie' ), esc_html__( '% Comments', 'selfie' ) );
+		comments_popup_link( esc_html__( 'Comment', 'selfie' ), esc_html__( '1 Comment', 'selfie' ), esc_html__( '% Comments', 'selfie' ) );
 		echo '</span>';
 	}
 

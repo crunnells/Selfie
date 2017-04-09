@@ -18,14 +18,14 @@ function selfie_wpcom_setup() {
 	// Set theme colors for third party services.
 	if ( ! isset( $themecolors ) ) {
 		$themecolors = array(
-			'bg'     => '',
-			'border' => '',
-			'text'   => '',
-			'link'   => '',
-			'url'    => '',
+			'bg'     => 'ffffff',
+			'border' => 'cccccc',
+			'text'   => '222222',
+			'link'   => '2b75c9',
+			'url'    => '2b75c9',
 		);
 	}
-	
+
 	/* Add WP.com print styles */
 	add_theme_support( 'print-styles' );
 }

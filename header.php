@@ -32,7 +32,5 @@
 
 		<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
-		<?php selfie_social_menu(); ?>
-
 	</header>
 	<div id="content" class="site-content">

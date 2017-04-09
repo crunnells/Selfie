@@ -16,6 +16,7 @@
 function selfie_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
+		'type'		=> 'click',
 		'container' => 'main',
 		'render'    => 'selfie_infinite_scroll_render',
 		'footer'    => 'page',
@@ -51,3 +52,11 @@ function selfie_social_menu() {
 		jetpack_social_menu();
 	}
 }
+
+/**
+ * Custom width for tiled galleries
+ */
+function selfie_custom_tiled_gallery_width() {
+    return '1000';
+}
+add_filter( 'tiled_gallery_content_width', 'selfie_custom_tiled_gallery_width' );
