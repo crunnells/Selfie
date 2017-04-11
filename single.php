@@ -18,9 +18,9 @@ get_header(); ?>
 			get_template_part( 'components/post/content', get_post_format() );
 
 			the_post_navigation( array(
-	            'prev_text'                  => __( 'Previous Post' ),
-	            'next_text'                  => __( 'Next Post' ),
-	            'screen_reader_text' => __( 'Post Navigation' ),
+	            'prev_text'                  => __( 'Previous Post', 'selfie' ),
+	            'next_text'                  => __( 'Next Post', 'selfie' ),
+	            'screen_reader_text' => __( 'Post Navigation', 'selfie' ),
 			) );
 
 			// If comments are open or we have at least one comment, load up the comment template.

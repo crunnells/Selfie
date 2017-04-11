@@ -149,7 +149,7 @@ function selfie_scripts() {
 add_action( 'wp_enqueue_scripts', 'selfie_scripts' );
 
 /**
- * Register Google fonts for Memos.
+ * Register Google fonts for Selfie
  */
 function selfie_fonts_url() {
 	$fonts_url = '';
@@ -161,7 +161,7 @@ function selfie_fonts_url() {
 	 * supported by Catamaran, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'memos' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'selfie' ) ) {
 		$fonts[] = 'Catamaran:400,600,700';
 	}
 	/**
@@ -169,7 +169,7 @@ function selfie_fonts_url() {
 	 * supported by Nunito Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'memos' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'selfie' ) ) {
 		$fonts[] = 'Nunito Sans:400,400i,700,700i';
 	}
 
