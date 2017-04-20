@@ -375,6 +375,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
 	margin: 0 0 1.5em;
+	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
@@ -581,7 +582,6 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
 }
 
 dt {
@@ -625,9 +625,11 @@ td {
 }
 
 .main-navigation ul ul {
+	background: #fff;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
+	text-align: left;
 	top: 1.5em;
 	left: -999em;
 	z-index: 99999;
@@ -664,10 +666,15 @@ td {
 	padding: 0 0.538461538em;
 }
 
+.main-navigation ul ul li a:after {
+	content: none;
+}
+
 .main-navigation a {
 	display: block;
 	font-size: 14px;
 	font-size: 0.875em;
+	line-height: 1.71428571;
 	text-decoration: none;
 }
 
@@ -699,11 +706,7 @@ td {
 .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
-}
-
-.nav-links {
-	margin-left: 5%;
-	margin-right: 5%;
+	padding: 0 1.5em;
 }
 
 .nav-links a {
@@ -884,7 +887,7 @@ body {
 }
 
 .hentry {
-	margin: 1.75em 0 5em;
+	margin: 0 0 5em;
 }
 
 .entry-title {
@@ -919,34 +922,13 @@ body {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.4375em 0 0;
+	margin: 1.4375em auto 0;
+	padding: 0 1.5em;
 	text-align: left;
 }
 
 .entry-content h2 {
 	font-weight: 400;
-}
-
-.entry-content > * {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.entry-content > *:last-child {
-	margin-bottom: 0;
-}
-
-.entry-content .gallery,
-.entry-content .tiled-gallery {
-	margin: 0;
-}
-
-.entry-content table {
-	width: 90%;
-}
-
-.entry-content .mejs-container {
-	width: 90% !important;
 }
 
 .entry-footer {
@@ -994,7 +976,46 @@ body {
 	margin: 0 5%;
 }
 
+.comments-title {
+	font-weight: 400;
+}
+
+.comment-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.comment-list .children {
+	list-style: none;
+}
+
+.comment-list li {
+	border-top: 1px solid #ccc;
+	padding: 1.75em 0;
+}
+
+.comment-author .avatar {
+	float: left;
+	margin-top: 0.25em;
+	margin-right: 0.625em;
+}
+
+.comment-metadata {
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.538461;
+}
+
+.comment-metadata a {
+	color: #555d66;
+}
+
+.comment-content {
+	margin-top: 1em;
+}
+
 .comment-content a {
+	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
@@ -1097,7 +1118,10 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	color: #555D66;
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin: 0.7142857em 0;
 }
 
 /* Ensure center-aligned captions center-align properly. */
@@ -1190,20 +1214,23 @@ object {
 	padding-right: 0;
 }
 
-
 .gallery-caption {
 	display: block;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	line-height: 1.6153846154;
-	padding-top: 0.5384615385em;
+	font-size: 14px;
+	font-size: 0.875rem;
+	line-height: 1.5;
+	padding: 0.5em 0 1em;
+}
+
+.PDS_Poll {
+	margin-bottom: 1.5em;
 }
 
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
 /* >= 600px */
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 660px) {
 
 	.site-main {
 		padding-top: 3.625em;
@@ -1211,7 +1238,11 @@ object {
 
 	.page-content,
 	.entry-content,
-	.entry-summary {
+	.entry-summary,
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+		padding: 0;
 	}
 
 	.site-footer {
@@ -1232,7 +1263,7 @@ object {
 }
 
 /* >= 736px */
-@media screen and (min-width: 46em) {
+@media screen and (min-width: 736px) {
 	.site {
 		margin: 0 5%;
 	}
@@ -1243,19 +1274,14 @@ object {
 
 	.page-content,
 	.entry-content,
-	.entry-summary {
+	.entry-summary,
+	.post-navigation,
+	.comments-area {
 		margin-bottom: 3.625em;
-	}
+		margin-left: auto;
+		margin-right: auto;
+		width: 660px;
 
-	.entry-content > * {
-		margin-left: 17.2%;
-		margin-right: 17.2%;
-		max-width: 656px;
-	}
-
-	.entry-content .gallery,
-	.entry-content .tiled-gallery {
-		max-width: 100%;
 	}
 
 	.size-large {
@@ -1265,7 +1291,7 @@ object {
 }
 
 /* >= 1100 */
-@media screen and (min-width: 68.75em) {
+@media screen and (min-width: 1100px) {
 	.site {
 		margin: 0 auto;
 		width: 1000px;
@@ -1284,8 +1310,10 @@ object {
 
 	.page-content,
 	.entry-content,
-	.entry-summary {
-		margin: 3em 0 3.5em;
+	.entry-summary,
+	.post-navigation,
+	.comments-area {
+		margin: 3.5em auto;
 	}
 
 	.hentry {
@@ -1304,13 +1332,12 @@ object {
 		max-width: 656px;
 	}
 
-	.size-large {
+	img.size-big,
+	.wp-caption.caption-big {
+		display: inline-block;
+		float: none;
+		margin-left: -170px;
 		max-width: 1000px;
-	}
-
-	.aligncenter.size-large {
-		margin-left: -172px;
-		margin-right: -172px;
 	}
 
 	.widget-area {
