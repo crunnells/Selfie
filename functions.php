@@ -1,13 +1,13 @@
 <?php
 /**
- * Selfie functions and definitions
+ * No Filter functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Selfie
+ * @package No Filter
  */
 
-if ( ! function_exists( 'selfie_setup' ) ) :
+if ( ! function_exists( 'nofilter_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'selfie_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function selfie_setup() {
+function nofilter_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on components, use a find and replace
-	 * to change 'selfie' to the name of your theme in all the template files.
+	 * to change 'nofilter' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'selfie', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'nofilter', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -42,11 +42,11 @@ function selfie_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'selfie-featured-image', 1000, 9999 );
+	add_image_size( 'nofilter-featured-image', 1000, 9999 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'selfie' ),
+		'menu-1' => esc_html__( 'Top', 'nofilter' ),
 		) );
 
 	/**
@@ -72,7 +72,7 @@ function selfie_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'selfie_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'nofilter_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
 
@@ -80,11 +80,11 @@ function selfie_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'editor-style.css', selfie_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', nofilter_fonts_url() ) );
 
 }
 endif;
-add_action( 'after_setup_theme', 'selfie_setup' );
+add_action( 'after_setup_theme', 'nofilter_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -93,17 +93,17 @@ add_action( 'after_setup_theme', 'selfie_setup' );
  *
  * @global int $content_width
  */
-function selfie_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'selfie_content_width', 1000 );
+function nofilter_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'nofilter_content_width', 1000 );
 }
-add_action( 'after_setup_theme', 'selfie_content_width', 0 );
+add_action( 'after_setup_theme', 'nofilter_content_width', 0 );
 
 /**
  * Return early if Custom Logos are not available.
  *
  * @todo Remove after WP 4.7
  */
-function selfie_the_custom_logo() {
+function nofilter_the_custom_logo() {
 	if ( ! function_exists( 'the_custom_logo' ) ) {
 		return;
 	} else {
@@ -116,9 +116,9 @@ function selfie_the_custom_logo() {
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function selfie_widgets_init() {
+function nofilter_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'selfie' ),
+		'name'          => esc_html__( 'Sidebar', 'nofilter' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -127,33 +127,33 @@ function selfie_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'selfie_widgets_init' );
+add_action( 'widgets_init', 'nofilter_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function selfie_scripts() {
+function nofilter_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'selfie-fonts', selfie_fonts_url() );
+	wp_enqueue_style( 'nofilter-fonts', nofilter_fonts_url() );
 
-	wp_enqueue_style( 'selfie-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'nofilter-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'selfie-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'nofilter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'selfie-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'nofilter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'selfie-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20170412', true );
+	wp_enqueue_script( 'nofilter-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20170412', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'selfie_scripts' );
+add_action( 'wp_enqueue_scripts', 'nofilter_scripts' );
 
 /**
- * Register Google fonts for Selfie
+ * Register Google fonts for nofilter
  */
-function selfie_fonts_url() {
+function nofilter_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -163,7 +163,7 @@ function selfie_fonts_url() {
 	 * supported by Catamaran, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'selfie' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'nofilter' ) ) {
 		$fonts[] = 'Catamaran:400,600,700';
 	}
 	/**
@@ -171,7 +171,7 @@ function selfie_fonts_url() {
 	 * supported by Nunito Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'selfie' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'nofilter' ) ) {
 		$fonts[] = 'Nunito Sans:400,400i,700,700i';
 	}
 

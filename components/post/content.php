@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Selfie
+ * @package No Filter
  */
 
 ?>
@@ -23,7 +23,7 @@
 	<?php if ( '' != get_the_post_thumbnail() ) : ?>
 		<div class="post-thumbnail">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'selfie-featured-image' ); ?>
+				<?php the_post_thumbnail( 'nofilter-featured-image' ); ?>
 			</a>
 		</div>
 	<?php endif; ?>
@@ -32,12 +32,12 @@
 		<?php
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'selfie' ), array( 'span' => array( 'class' => array() ) ) ),
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'nofilter' ), array( 'span' => array( 'class' => array() ) ) ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'selfie' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'nofilter' ),
 				'after'  => '</div>',
 			) );
 		?>

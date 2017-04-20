@@ -1,4 +1,4 @@
-=== Selfie ===
+=== No Filter ===
 
 Contributors:
 Tags:
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Selfie is a photo-focused theme for phone photographers to showcase their latest shots.
+No Filter is a photo-focused theme for phone photographers to showcase their latest shots.
 
 == Installation ==
 
@@ -23,11 +23,11 @@ Selfie is a photo-focused theme for phone photographers to showcase their latest
 
 = Does this theme support any plugins? =
 
-Selfie includes support for Jetpack's Infinite Scroll as well as other features.
+No Filter includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
 
-= 1.0 - [Date] =
+= 1.0 - 04-19-2017 =
 * Initial release
 
 == Credits ==

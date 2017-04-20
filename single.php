@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Selfie
+ * @package No Filter
  */
 
 get_header(); ?>
@@ -18,9 +18,9 @@ get_header(); ?>
 			get_template_part( 'components/post/content', get_post_format() );
 
 			the_post_navigation( array(
-	            'prev_text'                  => __( 'Previous Post', 'selfie' ),
-	            'next_text'                  => __( 'Next Post', 'selfie' ),
-	            'screen_reader_text' => __( 'Post Navigation', 'selfie' ),
+	            'prev_text'                  => __( 'Previous Post', 'nofilter' ),
+	            'next_text'                  => __( 'Next Post', 'nofilter' ),
+	            'screen_reader_text' => __( 'Post Navigation', 'nofilter' ),
 			) );
 
 			// If comments are open or we have at least one comment, load up the comment template.

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Selfie
+ * @package No Filter
  */
 
 get_header(); ?>

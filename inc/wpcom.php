@@ -4,7 +4,7 @@
  *
  * This file is centrally included from `wp-content/mu-plugins/wpcom-theme-compat.php`.
  *
- * @package Selfie
+ * @package No Filter
  */
 
 /**
@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function selfie_wpcom_setup() {
+function nofilter_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -29,12 +29,12 @@ function selfie_wpcom_setup() {
 	/* Add WP.com print styles */
 	add_theme_support( 'print-styles' );
 }
-add_action( 'after_setup_theme', 'selfie_wpcom_setup' );
+add_action( 'after_setup_theme', 'nofilter_wpcom_setup' );
 
 /*
  * WordPress.com-specific styles
  */
-function selfie_wpcom_styles() {
-	wp_enqueue_style( 'selfie-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', '20160411' );
+function nofilter_wpcom_styles() {
+	wp_enqueue_style( 'nofilter-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', '20160411' );
 }
-add_action( 'wp_enqueue_scripts', 'selfie_wpcom_styles' );
+add_action( 'wp_enqueue_scripts', 'nofilter_wpcom_styles' );

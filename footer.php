@@ -6,14 +6,14 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Selfie
+ * @package No Filter
  */
 
 ?>
 
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php selfie_social_menu(); ?>
+		<?php nofilter_social_menu(); ?>
 
 		<?php get_template_part( 'components/footer/site', 'info' ); ?>
 	</footer>

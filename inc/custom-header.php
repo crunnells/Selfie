@@ -3,32 +3,32 @@
  * Implementation of the Custom Header feature
  * http://codex.wordpress.org/Custom_Headers
  *
- * @package Selfie
+ * @package No Filter
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses selfie_header_style()
+ * @uses nofilter_header_style()
  */
-function selfie_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'selfie_custom_header_args', array(
+function nofilter_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'nofilter_custom_header_args', array(
 		'default-text-color'     => '222222',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'selfie_header_style',
+		'wp-head-callback'       => 'nofilter_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'selfie_custom_header_setup' );
+add_action( 'after_setup_theme', 'nofilter_custom_header_setup' );
 
-if ( ! function_exists( 'selfie_header_style' ) ) :
+if ( ! function_exists( 'nofilter_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see selfie_custom_header_setup().
+ * @see nofilter_custom_header_setup().
  */
-function selfie_header_style() {
+function nofilter_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -61,4 +61,4 @@ function selfie_header_style() {
 	</style>
 	<?php
 }
-endif; // selfie_header_style
+endif; // nofilter_header_style
