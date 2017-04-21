@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: nofilter
-Tags:
+Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -513,8 +513,8 @@ input[type="submit"] {
 	color: #fff;
 	font-size: 14px;
 	font-size: 0.875rem;
-	line-height: 1;
-	padding: .6em .8em;
+	line-height: 1.5;
+	padding: 0.65em 1.5em;
 }
 
 button:hover,
@@ -625,14 +625,34 @@ td {
 }
 
 .main-navigation ul ul {
-	background: #fff;
+	background: #eee;
+	border-radius: 1em;
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
+	margin-left: -1em;
+	margin-top: 16px;
+	padding: 0.5em 1em;
 	position: absolute;
 	text-align: left;
-	top: 1.5em;
+	top: 1em;
 	left: -999em;
 	z-index: 99999;
+}
+
+.main-navigation ul ul:before {
+	border-color: transparent transparent #eee;
+	border-style: solid;
+	border-width: 0 6px 6px;
+	bottom: auto;
+	content: '';
+	left: 20px;
+	position: absolute;
+	right: auto;
+	top: -6px;
+}
+
+.main-navigation ul ul li {
+	line-height: 2;
 }
 
 .main-navigation ul ul ul {
@@ -640,9 +660,24 @@ td {
 	top: 0;
 }
 
+.main-navigation ul ul ul:before {
+	background: #eee;
+	border-color: transparent;
+	border-width: 0;
+	box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+	display: block;
+	height: 10px;
+	left: -5px;
+	top: 20px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 10px;
+}
+
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
 	left: 100%;
+	top: -1.5em;
 }
 
 .main-navigation ul ul a {
@@ -656,17 +691,26 @@ td {
 
 .main-navigation li {
 	display: inline-block;
+	line-height: 2;
+	padding-right: 1.142857em;
 	position: relative;
 }
 
-.main-navigation li:not(:last-child) a:after {
+.main-navigation li:after {
 	content: "\002f";
-	display: inline-block;
-	opacity: 0.7;
-	padding: 0 0.538461538em;
+	opacity: 0.5;
+	position: absolute;
+	right: 5px;
+	top: 0;
 }
 
-.main-navigation ul ul li a:after {
+.main-navigation li:last-child,
+.main-navigation ul ul li {
+	padding-right: 0;
+}
+
+.main-navigation li:last-child:after,
+.main-navigation ul ul li:after {
 	content: none;
 }
 
@@ -674,8 +718,28 @@ td {
 	display: block;
 	font-size: 14px;
 	font-size: 0.875em;
-	line-height: 1.71428571;
+	line-height: 2.285714;
 	text-decoration: none;
+}
+
+.main-navigation .menu-item-has-children > a:after {
+	content: "\f431";
+	display: inline-block;
+	font-weight: 700;
+	line-height: 0.75;
+	margin-left: 0.5em;
+	opacity: 0.7;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+.main-navigation .sub-menu .menu-item-has-children > a:after {
+	content: "\003e";
+	display: inline-block;
+	line-height: 1.33;
+	margin-left: 0.5em;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
 
 /* Small menu. */
@@ -824,6 +888,7 @@ body {
 }
 
 .site-title {
+	font-family: 'Catamaran', sans-serif;
 	font-size: 36px;
 	font-size: 2.25rem;
 	font-weight: 700;
@@ -886,12 +951,22 @@ body {
 	display: block;
 }
 
+.sticky-post {
+	color: #777;
+	font-size: 12px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
 .hentry {
 	margin: 0 0 5em;
 }
 
 .entry-title {
-	font-weight: 400;
+	font-size: 26px;
+	font-size: 1.625rem;
+	font-weight: 600;
 	margin: 0;
 	padding: 0 5%;
 }
@@ -929,6 +1004,10 @@ body {
 
 .entry-content h2 {
 	font-weight: 400;
+}
+
+.attachment {
+	text-align: center;
 }
 
 .entry-footer {
@@ -972,8 +1051,9 @@ body {
 # Comments
 --------------------------------------------------------------*/
 .comments-area {
+	margin: 1.4375em auto 0;
+	padding: 0 1.5em;
 	text-align: left;
-	margin: 0 5%;
 }
 
 .comments-title {
@@ -989,29 +1069,97 @@ body {
 	list-style: none;
 }
 
-.comment-list li {
-	border-top: 1px solid #ccc;
-	padding: 1.75em 0;
+.comment-list article {
+	padding: 1.5em 0 3em;
+	position: relative;
+}
+
+.comment-list .pingback,
+.comment-list .trackback {
+	font-style: italic;
+	padding: 1.5em 0;
 }
 
 .comment-author .avatar {
-	float: left;
+	border-radius: 50%;
+	bottom: 3em;
+	position: absolute;
 	margin-top: 0.25em;
 	margin-right: 0.625em;
 }
 
+.comment-author .fn {
+	color: #999;
+	left: 48px;
+	margin-left: 1em;
+	position: absolute;
+}
+
+.comment-author .fn a {
+	text-decoration: none;
+}
+
+.comment-author .says {
+	display: none;
+}
+
 .comment-metadata {
-	font-size: 13px;
-	font-size: 0.8125rem;
-	line-height: 1.538461;
+	bottom: 2em;
+	font-size: 12px;
+	font-size: 0.75rem;
+	left: 48px;
+	margin-left: 1em;
+	position: absolute;
 }
 
 .comment-metadata a {
-	color: #555d66;
+	color: #aaa;
+	text-decoration: none;
+}
+
+.comment-metadata a:hover {
+	color: #777;
+	text-decoration: underline;
+}
+
+.edit-link {
+	margin-left: 0.5em;
 }
 
 .comment-content {
-	margin-top: 1em;
+	background: #E6E6EE;
+	border-radius: 1em;
+	display: inline-block;
+	margin-top: 1.5em;
+	margin-left: 48px;
+	padding: 0.75em 1em;
+}
+
+.comment-content:after {
+	border: 12px solid;
+	border-color: transparent transparent transparent #E6E6EE;
+	bottom: 2.5em;
+	content: ' ';
+	height: 0;
+	left: 48px;
+	position: absolute;
+	right: auto;
+	top: auto;
+	-webkit-transform: rotate(35deg);
+	transform: rotate(35deg);
+	width: 0;
+}
+
+.reply {
+	font-size: 12px;
+	font-size: 0.75rem;
+	position: absolute;
+	left: 0.25em;
+	margin-top: 0.5em;
+}
+
+.reply a {
+	text-decoration: none;
 }
 
 .comment-content a {
@@ -1019,8 +1167,33 @@ body {
 	word-wrap: break-word;
 }
 
+.comment-content blockquote {
+	margin: 0;
+}
+
+.comment-content > :last-child {
+	margin-bottom: 0;
+}
+
 .bypostauthor {
 	display: block;
+}
+
+.bypostauthor .comment-content {
+	background: #2b75c9;
+	color: #fff;
+}
+
+.bypostauthor .comment-content:after {
+	border-color: transparent transparent transparent #2b75c9;
+}
+
+.comment-reply-title {
+	font-weight: 600;
+}
+
+.comment-reply-title small {
+	float: right;
 }
 
 /*--------------------------------------------------------------
@@ -1042,6 +1215,28 @@ body {
 /* Make sure select elements fit in widgets. */
 .widget select {
 	max-width: 100%;
+}
+
+.widget ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.widget ul li {
+	line-height: 2;
+}
+
+/* Tag Cloud widget */
+.tagcloud a {
+	display: inline-block;
+	font-size: inherit !important;
+	line-height: 2;
+	padding-right: 0.3125em;
+	text-decoration: none;
+}
+
+.tagcloud a:before {
+	content: '#';
 }
 
 /*--------------------------------------------------------------
@@ -1230,19 +1425,10 @@ object {
 # Media Queries
 --------------------------------------------------------------*/
 /* >= 600px */
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 600px) {
 
 	.site-main {
 		padding-top: 3.625em;
-	}
-
-	.page-content,
-	.entry-content,
-	.entry-summary,
-	.comment-navigation,
-	.posts-navigation,
-	.post-navigation {
-		padding: 0;
 	}
 
 	.site-footer {
@@ -1273,15 +1459,16 @@ object {
 	}
 
 	.page-content,
+	.post-navigation,
 	.entry-content,
 	.entry-summary,
-	.post-navigation,
+	.entry-footer,
 	.comments-area {
 		margin-bottom: 3.625em;
 		margin-left: auto;
 		margin-right: auto;
+		padding: 0;
 		width: 660px;
-
 	}
 
 	.size-large {
@@ -1301,19 +1488,26 @@ object {
 		padding: 4.125em;
 	}
 
-	.site-title {}
-
 	.site-main {
 		margin: 0;
 		padding-top: 3.5em;
 	}
 
 	.page-content,
+	.post-navigation,
 	.entry-content,
 	.entry-summary,
-	.post-navigation,
 	.comments-area {
 		margin: 3.5em auto;
+	}
+
+	.entry-content {
+		width: 1000px;
+	}
+
+	.entry-content > * {
+		margin: 0 170px 1.5em;
+		width: 660px;
 	}
 
 	.hentry {
@@ -1329,15 +1523,24 @@ object {
 	}
 
 	.size-medium {
-		max-width: 656px;
+		max-width: 660px;
 	}
 
+	.entry-content .tiled-gallery {
+		margin-left: 0;
+		margin-right: 0;
+		width: 1000px;
+	}
+
+	.size-big-wrapper,
 	img.size-big,
 	.wp-caption.caption-big {
 		display: inline-block;
 		float: none;
-		margin-left: -170px;
+		margin-left: 0;
+		margin-right: 0;
 		max-width: 1000px;
+		width: auto;
 	}
 
 	.widget-area {
@@ -1345,13 +1548,22 @@ object {
 	}
 
 	.widget {
-		float: left;
-		margin-right: 35px;
+		display: inline-block;
+		margin-bottom: 3.5em;
+		vertical-align: top;
 		width: 310px;
 	}
 
-	.widget:last-child {
-		margin-right: 0;
+	.widget-gallery .tiled-gallery {
+		width: 310px;
 	}
 
+	.widget {
+		margin-left: 35px;
+	}
+
+	.widget:nth-child(1),
+	.widget:nth-child(3n + 1) {
+		margin-left: 0;
+	}
 }

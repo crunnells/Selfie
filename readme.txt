@@ -1,13 +1,13 @@
 === No Filter ===
 
-Contributors:
-Tags:
-
-Requires at least:
-Tested up to:
+Requires at least: 4.7
+Tested up to: 4.7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
+
+No Filter is built with Components (https://github.com/Automattic/theme-components/)
 
 == Description ==
 
@@ -27,10 +27,12 @@ No Filter includes support for Jetpack's Infinite Scroll as well as other featur
 
 == Changelog ==
 
-= 1.0 - 04-19-2017 =
+= 1.0 - 04-21-2017 =
 * Initial release
 
 == Credits ==
 
 * Based on https://github.com/Automattic/theme-components/, (C) 2015-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* Genericons Neue https://github.com/Automattic/genericons-neue, (C) 2013-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Images used in screenshot.png: Photos by adrian (@aows) (https://unsplash.com/?photo=1jtBE_ZEkwo & https://unsplash.com/@aows?photo=zkd9FIEFUk8), [CC0](http://creativecommons.org/publicdomain/zero/1.0/)

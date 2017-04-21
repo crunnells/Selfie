@@ -60,3 +60,11 @@ function nofilter_custom_tiled_gallery_width() {
     return '1000';
 }
 add_filter( 'tiled_gallery_content_width', 'nofilter_custom_tiled_gallery_width' );
+
+/**
+ * Filter the Jetpack Gallery width to fit the widget area
+ */
+add_filter( 'gallery_widget_content_width', 'memos_widget_content_width' );
+function memos_widget_content_width() {
+	return '310';
+}

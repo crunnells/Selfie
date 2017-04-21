@@ -12,6 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
+			if ( is_sticky() ) {
+				echo '<span class="sticky-post">' . esc_html__( 'Featured', 'nofilter' ) . '</span>';
+			}
+
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
