@@ -136,6 +136,9 @@ function nofilter_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'nofilter-fonts', nofilter_fonts_url() );
 
+	// Add Genericons, used in the main stylesheet.
+	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
+
 	wp_enqueue_style( 'nofilter-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'nofilter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

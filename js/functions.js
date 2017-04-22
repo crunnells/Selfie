@@ -1,7 +1,7 @@
 /**
  * File functions.js
  *
- * This is mostly for some JS that finds images in .entry-content and adds a classname if they're large
+ * This code liberally borrowed from the Interglactic theme: https://wordpress.org/themes/intergalactic/
  */
 
 ( function( $ ) {
@@ -9,6 +9,16 @@
 
 	// After page loads
 	$window.load( function() {
+		outdentImages();
+	} );
+
+	// On window resize
+	$window.on( 'resize', function() {
+		outdentImages();
+	});
+
+	// After infinite scroll loads
+	$window.on( 'post-load', function() {
 		outdentImages();
 	} );
 
