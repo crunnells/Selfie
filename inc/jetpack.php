@@ -16,10 +16,11 @@
 function nofilter_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'type'		=> 'click',
+		'type'		=> 'scroll',
 		'container' => 'main',
 		'render'    => 'nofilter_infinite_scroll_render',
 		'footer'    => 'page',
+		'footer_widgets' => 'sidebar-1',
 	) );
 
 	// Add theme support for Responsive Videos.

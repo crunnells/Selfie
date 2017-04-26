@@ -9,9 +9,375 @@ https://codex.wordpress.org/Right_to_Left_Languagecomponentsupport
 
 */
 
-/*
-body {
-	direction: rtl;
-	unicode-bidi: embed;
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Accessibility
+# Alignments
+# Clearings
+# Typography
+# Genericons Neue
+# Forms
+# Buttons
+# Formatting
+# Lists
+# Tables
+# Navigation
+# Links
+# Layout
+	## Posts
+	## Pages
+# Comments
+# Widgets
+# Infinite scroll
+# Media
+	## Galleries
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+.screen-reader-text:focus {
+	left: 0;
+	right: 5px;
 }
-*/
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	float: right;
+	margin-left: 1.5em;
+	margin-right: 0;
+}
+
+.alignright {
+	float: left;
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+blockquote {
+	border-left: none;
+	border-right: 3px solid #ccc;
+	padding-left: 0;
+	padding-right: .75em;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+textarea {
+	padding-left: 0;
+	padding-right: 6px;
+}
+
+/*--------------------------------------------------------------
+# Buttons
+--------------------------------------------------------------*/
+.search-results .search-form {
+	text-align: right;
+}
+
+.search-submit {
+	left: 0;
+	right: auto;
+}
+
+.search-submit:before {
+	left: auto;
+	right: 1px;
+}
+
+/*--------------------------------------------------------------
+# Lists
+--------------------------------------------------------------*/
+ul, ol {
+	padding-left: auto;
+	padding-right: 2em;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+.main-navigation ul ul ul:before {
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.main-navigation.toggled ul ul ul ul {
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.nav-links a {
+	background: #2b75c9;
+	border-radius: 5px;
+	color: #fff;
+	display: inline-block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin: 0 0 1em 0;
+	padding: .65em 1.5em;
+	text-align: center;
+	text-decoration: none;
+}
+
+.main-navigation .sub-menu .menu-item-has-children > a::after {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+/* >= 400px */
+@media screen and (min-width: 25em) {
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: right;
+		text-align: right;
+	}
+
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: left;
+		text-align: left;
+	}
+}
+
+/*--------------------------------------------------------------
+## Posts
+--------------------------------------------------------------*/
+
+.page-content,
+.entry-content,
+.entry-summary {
+	text-align: right;
+}
+
+/*--------------------------------------------------------------
+# Comments
+--------------------------------------------------------------*/
+.comments-area {
+	text-align: right;
+}
+
+.comment-list {
+	list-style: none;
+	padding-left: auto;
+	padding-right: 0;
+}
+
+.comment-author .avatar {
+	margin-left: 0.625em;
+	margin-right: 0;
+}
+
+.comment-author .fn {
+	left: auto;
+	right: 48px;
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.comment-metadata {
+	left: auto;
+	right: 48px;
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+.edit-link {
+	margin-right: 0.5em;
+	margin-left: 0;
+}
+
+.comment-content {
+	margin-left: 0;
+	margin-right: 48px;
+}
+
+.comment-content:after {
+	left: auto;
+	right: 48px;
+	-webkit-transform: rotate(125deg);
+	transform: rotate(125deg);
+}
+
+.reply {
+	left: auto;
+	right: 0.25em;
+}
+
+.comment-reply-title small {
+	float: left;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	text-align: right;
+}
+
+.widget ul {
+	padding-right: 0;
+}
+
+/* Tag Cloud widget */
+.tagcloud a {
+	padding-left: 0.3125em;
+	padding-right: 0;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+/* Give some padding to floated elements, to prevent them butting up against text. */
+.wp-caption.alignleft {
+	margin-left: 20px;
+	margin-right: 0;
+}
+
+.wp-caption.alignright {
+	margin-left: 0;
+	margin-right: 20px;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery-item {
+	padding-left: 2%;
+	padding-right: 0;
+}
+
+.gallery-columns-2 .gallery-item {
+	padding-left: 1.875%;
+	padding-right: 0;
+}
+
+.gallery-columns-3 .gallery-item {
+	padding-left: 1.75%;
+	padding-right: 0;
+}
+
+.gallery-columns-4 .gallery-item {
+	padding-left: 1.625%;
+	padding-right: 0;
+}
+
+.gallery-columns-5 .gallery-item {
+	padding-left: 1.5%;
+	padding-right: 0;
+}
+
+.gallery-columns-6 .gallery-item {
+	padding-left: 1.375%;
+	padding-right: 0;
+}
+
+.gallery-columns-7 .gallery-item {
+	padding-left: 1.25%;
+	padding-right: 0;
+}
+
+.gallery-columns-8 .gallery-item {
+	padding-left: 1.125%;
+	padding-right: 0;
+}
+
+.gallery-columns-9 .gallery-item {
+	padding-left: 1%;
+	padding-right: 0;
+}
+
+.gallery-columns-2 .gallery-item:nth-of-type(2n),
+.gallery-columns-3 .gallery-item:nth-of-type(3n),
+.gallery-columns-4 .gallery-item:nth-of-type(4n),
+.gallery-columns-5 .gallery-item:nth-of-type(5n),
+.gallery-columns-6 .gallery-item:nth-of-type(6n),
+.gallery-columns-7 .gallery-item:nth-of-type(7n),
+.gallery-columns-8 .gallery-item:nth-of-type(8n),
+.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+	padding-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+/* >= 600px */
+@media screen and (min-width: 600px) {
+
+	.main-navigation ul ul {
+		float: right;
+		left: auto;
+		margin-left: 0;
+		margin-right: -1em;
+		text-align: right;
+		right: -999em;
+	}
+
+	.main-navigation ul ul:before {
+		left: auto;
+		position: absolute;
+		right: 20px;
+	}
+
+	.main-navigation ul ul li {
+		padding-left: 0;
+	}
+
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
+		left: auto;
+		right: 100%;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		left: auto;
+		right: auto;
+	}
+
+	.main-navigation ul ul ul {
+		left: auto;
+		right: -999em;
+		top: 0;
+	}
+
+	.main-navigation ul ul ul:before {
+		left: 0;
+		right: -5px;
+	}
+
+	.main-navigation .menu-item-has-children > a:after {
+		content: "\f431";
+		font-size: 12px;
+		font-size: 0.75rem;
+		margin-left: auto;
+		margin-right: 5px;
+	}
+
+	.main-navigation .sub-menu .menu-item-has-children > a:after {
+		margin-left: 0;
+		margin-right: 0.5em;
+	}
+}
+
+/* >= 1100 */
+@media screen and (min-width: 1100px) {
+	.widget {
+		margin-left: 0;
+		margin-right: 35px;
+	}
+
+	.widget:nth-child(1),
+	.widget:nth-child(3n + 1) {
+		margin-right: 0;
+	}
+}

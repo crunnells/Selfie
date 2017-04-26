@@ -11,7 +11,16 @@ No Filter is built with Components (https://github.com/Automattic/theme-componen
 
 == Description ==
 
-No Filter is a photo-focused theme for phone photographers to showcase their latest shots.
+No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
+
+No Filter supports the following features:
+
+* Featured Images
+* Custom Menus
+* Widgets
+* Custom Headers
+* Custom Backgrounds
+* Social Links Menu
 
 == Installation ==
 
@@ -23,7 +32,7 @@ No Filter is a photo-focused theme for phone photographers to showcase their lat
 
 = Does this theme support any plugins? =
 
-No Filter includes support for Jetpack's Infinite Scroll as well as other features.
+No Filter includes support for Jetpack's Infinite Scroll, Content Options, and Tiled Galleries.
 
 == Changelog ==
 
