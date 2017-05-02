@@ -1277,6 +1277,12 @@ img.size-big,
 	text-align: center;
 }
 
+.comment-awaiting-moderation {
+	font-weight: 700;
+	position: absolute;
+	top: 0;
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -1373,7 +1379,7 @@ img.size-big,
 	display: block;
 }
 
-#infinite-handle span {
+#main #infinite-handle span {
 	background: #2b75c9;
 	border-radius: 5px;
 	color: #fff;
@@ -1383,14 +1389,14 @@ img.size-big,
 	padding: 0.75em 1.25em;
 }
 
-.infinite-loader {
+#main .infinite-loader {
 	height: 36px;
 	margin: 0 auto;
 	position: relative;
 	width: 36px;
 }
 
-.infinite-loader .spinner div div {
+#main .infinite-loader .spinner div div {
 	background: rgb(43, 117, 201) !important;
 }
 
