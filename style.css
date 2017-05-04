@@ -811,13 +811,13 @@ td {
 .post-navigation {
 	margin: 0 0 1.5em;
 	overflow: hidden;
-	/* padding: 0 1.5em; */
+	padding: 0 5%;
 }
 
 .nav-links a {
-	background: #2b75c9;
+	border: 2px solid #2b75c9;
 	border-radius: 5px;
-	color: #fff;
+	color: #2b75c9;
 	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -828,18 +828,22 @@ td {
 }
 
 .nav-links a:hover {
+	border-color: #4594ed;
 	background-color: #4594ed;
 	color: #fff;
 }
 
 .nav-links a:active,
 .nav-links a:focus {
+	border-color: #13529a;
 	background-color: #13529a;
 	color: #fff;
 }
 
 .comment-navigation .nav-links a {
-	background: #999;
+	background: #aaa;
+	border: none;
+	color: #fff;
 }
 
 .comment-navigation .nav-links a:hover {
@@ -1107,6 +1111,10 @@ img.size-big,
 	margin-bottom: 1.5em;
 }
 
+.cat-links {
+	color: #999;
+}
+
 .entry-tags a:before {
 	content: "#";
 }
@@ -1312,6 +1320,14 @@ img.size-big,
 	cursor: pointer;
 	display: inline-block;
 	width: 6em;
+}
+
+.comment-form input[type="submit"] {
+	background: #4594ed;
+}
+
+.comment-form input[type="submit"]:hover {
+	background: #2b75c9;
 }
 
 .comment-form .required {
@@ -1807,6 +1823,7 @@ object {
 	.entry-summary,
 	.comments-area {
 		margin: 0 auto 3em;
+		padding: 0 2em;
 	}
 
 	.page-content,
