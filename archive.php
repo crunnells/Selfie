@@ -16,8 +16,15 @@ get_header(); ?>
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<?php if ( is_tag() ): ?>
+				<h1 class="page-title tag">
+					<?php echo single_tag_title( '', false ); ?>
+				</h1>
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+					else:
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+					endif;
+
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header>

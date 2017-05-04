@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function nofilter_body_classes( $classes ) {
+function no_filter_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -24,11 +24,6 @@ function nofilter_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Add a class of no-sidebar when there is no sidebar present
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-		$classes[] = 'no-sidebar';
-	}
-
 	return $classes;
 }
-add_filter( 'body_class', 'nofilter_body_classes' );
+add_filter( 'body_class', 'no_filter_body_classes' );

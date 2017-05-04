@@ -7,7 +7,7 @@
  * @package No Filter
  */
 
-if ( ! function_exists( 'nofilter_setup' ) ) :
+if ( ! function_exists( 'no_filter_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'nofilter_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function nofilter_setup() {
+function no_filter_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on components, use a find and replace
-	 * to change 'nofilter' to the name of your theme in all the template files.
+	 * to change 'no-filter' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'nofilter', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'no-filter', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -42,12 +42,12 @@ function nofilter_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'nofilter-featured-image', 1000, 9999 );
+	add_image_size( 'no-filter-featured-image', 1000, 9999 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Top', 'nofilter' ),
-		) );
+		'menu-1' => esc_html__( 'Top', 'no-filter' ),
+	) );
 
 	/**
 	 * Add support for core custom logo.
@@ -55,8 +55,8 @@ function nofilter_setup() {
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
 		'width'       => 240,
-		'flex-width'  => true,
-		'flex-height' => true,
+		'flex-width'  => false,
+		'flex-height' => false,
 	) );
 
 	/*
@@ -64,7 +64,6 @@ function nofilter_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
@@ -72,7 +71,7 @@ function nofilter_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'nofilter_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'no_filter_custom_background_args', array(
 		'default-color' => 'ffffff',
 	) ) );
 
@@ -80,11 +79,11 @@ function nofilter_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'editor-style.css', nofilter_fonts_url() ) );
+	add_editor_style( array( 'editor-style.css', no_filter_fonts_url() ) );
 
 }
 endif;
-add_action( 'after_setup_theme', 'nofilter_setup' );
+add_action( 'after_setup_theme', 'no_filter_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -93,70 +92,57 @@ add_action( 'after_setup_theme', 'nofilter_setup' );
  *
  * @global int $content_width
  */
-function nofilter_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'nofilter_content_width', 1000 );
+function no_filter_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'no_filter_content_width', 1000 );
 }
-add_action( 'after_setup_theme', 'nofilter_content_width', 0 );
-
-/**
- * Return early if Custom Logos are not available.
- *
- * @todo Remove after WP 4.7
- */
-function nofilter_the_custom_logo() {
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		return;
-	} else {
-		the_custom_logo();
-	}
-}
+add_action( 'after_setup_theme', 'no_filter_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function nofilter_widgets_init() {
+function no_filter_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'nofilter' ),
+		'name'          => esc_html__( 'Footer', 'no-filter' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( '3-column widget area above the site footer.', 'nofilter' ),
+		'description'   => esc_html__( '3-column widget area.', 'no-filter' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'nofilter_widgets_init' );
+add_action( 'widgets_init', 'no_filter_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function nofilter_scripts() {
+function no_filter_scripts() {
 	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'nofilter-fonts', nofilter_fonts_url() );
+	wp_enqueue_style( 'no-filter-fonts', no_filter_fonts_url() );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.min.css', array(), '4.0.5' );
+	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.css', array(), '4.0.5' );
 
-	wp_enqueue_style( 'nofilter-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'no-filter-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'nofilter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'no-filter-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'nofilter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'no-filter-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'nofilter-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20170412', true );
+	wp_enqueue_script( 'no-filter-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20170412', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'nofilter_scripts' );
+add_action( 'wp_enqueue_scripts', 'no_filter_scripts' );
 
 /**
- * Register Google fonts for nofilter
+ * Register Google fonts for no-filter
  */
-function nofilter_fonts_url() {
+function no_filter_fonts_url() {
 	$fonts_url = '';
 	$fonts     = array();
 	$subsets   = 'latin,latin-ext';
@@ -166,7 +152,7 @@ function nofilter_fonts_url() {
 	 * supported by Catamaran, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'nofilter' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Catamaran font: on or off', 'no-filter' ) ) {
 		$fonts[] = 'Catamaran:400,600,700';
 	}
 	/**
@@ -174,7 +160,7 @@ function nofilter_fonts_url() {
 	 * supported by Nunito Sans, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'nofilter' ) ) {
+	if ( 'off' !== esc_html_x( 'on', 'Nunito Sans font: on or off', 'no-filter' ) ) {
 		$fonts[] = 'Nunito Sans:400,400i,700,700i';
 	}
 

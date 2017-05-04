@@ -5,7 +5,7 @@ Tested up to: 4.7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, theme-options, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
+Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
 
 No Filter is built with Components (https://github.com/Automattic/theme-components/)
 
@@ -35,6 +35,9 @@ No Filter supports the following features:
 No Filter includes support for Jetpack's Infinite Scroll, Content Options, and Tiled Galleries.
 
 == Changelog ==
+
+= 1.0.1 - 05-03-2017 =
+* Fixed items listed in review
 
 = 1.0 - 04-21-2017 =
 * Initial release

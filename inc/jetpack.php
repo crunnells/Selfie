@@ -13,13 +13,13 @@
  * See: https://jetpack.me/support/infinite-scroll/
  * See: https://jetpack.me/support/responsive-videos/
  */
-function nofilter_jetpack_setup() {
+function no_filter_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
 		'type'		=> 'scroll',
 		'container' => 'main',
-		'render'    => 'nofilter_infinite_scroll_render',
-		'footer'    => 'page',
+		'render'	=> 'no_filter_infinite_scroll_render',
+		'footer'	=> 'page',
 		'footer_widgets' => 'sidebar-1',
 	) );
 
@@ -29,13 +29,35 @@ function nofilter_jetpack_setup() {
 	// Add theme support for Social Menus
 	add_theme_support( 'jetpack-social-menu' );
 
+	// Add theme support for Content Options
+	add_theme_support( 'jetpack-content-options', array(
+	    'blog-display'			=> 'content',
+	    'author-bio'			=> false,
+	    'author-bio-default'	=> false,
+	    'post-details'			=> array(
+	        'stylesheet'		=> 'no-filter-style',
+	        'date'				=> '.posted-on',
+	        'categories'		=> '.cat-links',
+	        'tags'				=> '.entry-tags',
+	        'author'			=> '.byline',
+	    ),
+	    'featured-images'		=> array(
+	        'archive'			=> true,
+	        'archive-default'	=> false,
+	        'post'				=> true,
+	        'post-default'		=> false,
+	        'page'				=> true,
+	        'page-default'		=> false,
+	    ),
+	) );
+
 }
-add_action( 'after_setup_theme', 'nofilter_jetpack_setup' );
+add_action( 'after_setup_theme', 'no_filter_jetpack_setup' );
 
 /**
  * Custom render function for Infinite Scroll.
  */
-function nofilter_infinite_scroll_render() {
+function no_filter_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
@@ -46,7 +68,7 @@ function nofilter_infinite_scroll_render() {
 	}
 }
 
-function nofilter_social_menu() {
+function no_filter_social_menu() {
 	if ( ! function_exists( 'jetpack_social_menu' ) ) {
 		return;
 	} else {
@@ -57,15 +79,15 @@ function nofilter_social_menu() {
 /**
  * Custom width for tiled galleries
  */
-function nofilter_custom_tiled_gallery_width() {
-    return '1000';
+function no_filter_custom_tiled_gallery_width() {
+	return '1000';
 }
-add_filter( 'tiled_gallery_content_width', 'nofilter_custom_tiled_gallery_width' );
+add_filter( 'tiled_gallery_content_width', 'no_filter_custom_tiled_gallery_width' );
 
 /**
  * Filter the Jetpack Gallery width to fit the widget area
  */
-add_filter( 'gallery_widget_content_width', 'memos_widget_content_width' );
-function memos_widget_content_width() {
-	return '310';
+function no_filter_widget_content_width() {
+	return '300';
 }
+add_filter( 'gallery_widget_content_width', 'no_filter_widget_content_width' );

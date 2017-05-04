@@ -13,7 +13,7 @@
 
 	</div>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<?php nofilter_social_menu(); ?>
+		<?php no_filter_social_menu(); ?>
 
 		<?php get_template_part( 'components/footer/site', 'info' ); ?>
 	</footer>

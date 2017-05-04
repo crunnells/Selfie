@@ -18,9 +18,9 @@ get_header(); ?>
 			get_template_part( 'components/post/content', get_post_format() );
 
 			the_post_navigation( array(
-	            'prev_text'                  => __( 'Previous Post', 'nofilter' ),
-	            'next_text'                  => __( 'Next Post', 'nofilter' ),
-	            'screen_reader_text' => __( 'Post Navigation', 'nofilter' ),
+				'prev_text'				=> '<span class="post-nav">' . esc_html_x( 'Previous Post:', 'previous post', 'no-filter' ) . '</span> <span class="post-title">%title</span>',
+				'next_text'				=> '<span class="post-nav">' . esc_html_x( 'Next Post:', 'next post', 'no-filter' ) . '</span> <span class="post-title">%title</span>',
+	            'screen_reader_text'	=> esc_html__( 'Post Navigation', 'no-filter' ),
 			) );
 
 			// If comments are open or we have at least one comment, load up the comment template.

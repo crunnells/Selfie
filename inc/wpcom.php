@@ -12,7 +12,7 @@
  *
  * @global array $themecolors
  */
-function nofilter_wpcom_setup() {
+function no_filter_wpcom_setup() {
 	global $themecolors;
 
 	// Set theme colors for third party services.
@@ -29,12 +29,12 @@ function nofilter_wpcom_setup() {
 	/* Add WP.com print styles */
 	add_theme_support( 'print-styles' );
 }
-add_action( 'after_setup_theme', 'nofilter_wpcom_setup' );
+add_action( 'after_setup_theme', 'no_filter_wpcom_setup' );
 
 /*
  * WordPress.com-specific styles
  */
-function nofilter_wpcom_styles() {
-	wp_enqueue_style( 'nofilter-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', '20160411' );
+function no_filter_wpcom_styles() {
+	wp_enqueue_style( 'no_filter-wpcom', get_template_directory_uri() . '/inc/style-wpcom.css', '20160411' );
 }
-add_action( 'wp_enqueue_scripts', 'nofilter_wpcom_styles' );
+add_action( 'wp_enqueue_scripts', 'no_filter_wpcom_styles' );

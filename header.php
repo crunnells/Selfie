@@ -22,13 +22,13 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nofilter' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'no-filter' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 
 		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
-		<?php nofilter_the_custom_logo(); ?>
+		<?php the_custom_logo(); ?>
 
 		<?php get_template_part( 'components/header/site', 'branding' ); ?>
 

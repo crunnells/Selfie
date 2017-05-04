@@ -102,50 +102,33 @@ ul, ol {
 # Navigation
 --------------------------------------------------------------*/
 
-.main-navigation ul ul ul:before {
-	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-	-webkit-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+.menu-toggle::before {
+	margin-left: 5px;
+	margin-right: 0;
+}
+
+.main-navigation ul {
+	padding-right: 0;
+	text-align: right;
+}
+
+.main-navigation ul ul ul a:before {
+	display: none;
+}
+
+.main-navigation ul .sub-menu ul a:after {
+	content: "\f432";
+	font-size: 12px;
+	font-size: 0.75rem;
+	margin-top: -8px;
+	padding-right: 4px;
+	-webkit-transform: rotate(270deg);
+	transform: rotate(270deg);
 }
 
 .main-navigation.toggled ul ul ul ul {
 	margin-left: 0;
 	margin-right: 1em;
-}
-
-.nav-links a {
-	background: #2b75c9;
-	border-radius: 5px;
-	color: #fff;
-	display: inline-block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	margin: 0 0 1em 0;
-	padding: .65em 1.5em;
-	text-align: center;
-	text-decoration: none;
-}
-
-.main-navigation .sub-menu .menu-item-has-children > a::after {
-	-webkit-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-/* >= 400px */
-@media screen and (min-width: 25em) {
-	.comment-navigation .nav-previous,
-	.posts-navigation .nav-previous,
-	.post-navigation .nav-previous {
-		float: right;
-		text-align: right;
-	}
-
-	.comment-navigation .nav-next,
-	.posts-navigation .nav-next,
-	.post-navigation .nav-next {
-		float: left;
-		text-align: left;
-	}
 }
 
 /*--------------------------------------------------------------
@@ -166,8 +149,6 @@ ul, ol {
 }
 
 .comment-list {
-	list-style: none;
-	padding-left: auto;
 	padding-right: 0;
 }
 
@@ -239,11 +220,13 @@ ul, ol {
 
 /* Give some padding to floated elements, to prevent them butting up against text. */
 .wp-caption.alignleft {
+	float: right;
 	margin-left: 20px;
 	margin-right: 0;
 }
 
 .wp-caption.alignright {
+	float: left;
 	margin-left: 0;
 	margin-right: 20px;
 }
@@ -310,8 +293,43 @@ ul, ol {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
-/* >= 600px */
-@media screen and (min-width: 600px) {
+/* >= 400px */
+@media screen and (min-width: 25em) {
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: right;
+		text-align: right;
+	}
+
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: left;
+		text-align: left;
+	}
+}
+
+/* >= 726px */
+@media screen and (min-width: 726px) {
+
+	.main-navigation li:after {
+		content: "";
+		display: none;
+	}
+
+	.main-navigation li:before {
+		content: "\002f";
+		opacity: 0.5;
+		position: absolute;
+		left: 5px;
+		top: 0;
+	}
+
+	.main-navigation li {
+		padding-left: 1.142857em;
+		padding-right: 0;
+	}
 
 	.main-navigation ul ul {
 		float: right;
@@ -324,8 +342,12 @@ ul, ol {
 
 	.main-navigation ul ul:before {
 		left: auto;
-		position: absolute;
 		right: 20px;
+	}
+
+	.main-navigation ul ul li:before {
+		content: "";
+		display: none;
 	}
 
 	.main-navigation ul ul li {
@@ -347,12 +369,14 @@ ul, ol {
 	.main-navigation ul ul ul {
 		left: auto;
 		right: -999em;
-		top: 0;
 	}
 
 	.main-navigation ul ul ul:before {
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 		left: 0;
 		right: -5px;
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
 	}
 
 	.main-navigation .menu-item-has-children > a:after {

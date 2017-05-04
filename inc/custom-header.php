@@ -9,26 +9,26 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses nofilter_header_style()
+ * @uses no_filter_header_style()
  */
-function nofilter_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'nofilter_custom_header_args', array(
+function no_filter_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'no_filter_custom_header_args', array(
 		'default-text-color'     => '222222',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'nofilter_header_style',
+		'wp-head-callback'       => 'no_filter_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'nofilter_custom_header_setup' );
+add_action( 'after_setup_theme', 'no_filter_custom_header_setup' );
 
-if ( ! function_exists( 'nofilter_header_style' ) ) :
+if ( ! function_exists( 'no_filter_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see nofilter_custom_header_setup().
+ * @see no_filter_custom_header_setup().
  */
-function nofilter_header_style() {
+function no_filter_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -61,4 +61,4 @@ function nofilter_header_style() {
 	</style>
 	<?php
 }
-endif; // nofilter_header_style
+endif; // no_filter_header_style
