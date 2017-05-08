@@ -4,7 +4,7 @@ Theme URI: http://components.underscores.me/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: no-filter
@@ -331,6 +331,8 @@ th {
 .entry-content:after,
 .comment-content:before,
 .comment-content:after,
+.navigation:before,
+.navigation:after,
 .site-header:before,
 .site-header:after,
 .site-content:before,
@@ -345,6 +347,7 @@ th {
 .clear:after,
 .entry-content:after,
 .comment-content:after,
+.navigation:after,
 .site-header:after,
 .site-content:after,
 .site-footer:after {
@@ -806,7 +809,6 @@ td {
 	content: "\f406";
 }
 
-.comment-navigation,
 .posts-navigation,
 .post-navigation {
 	margin: 0 0 1.5em;
@@ -841,16 +843,16 @@ td {
 }
 
 .comment-navigation .nav-links a {
-	background: #aaa;
-	border: none;
-	color: #fff;
+	background: #fff;
+	border: 1px solid #999;
+	color: #999;
 }
 
 .comment-navigation .nav-links a:hover {
-	background-color: #4594ed;
+	background-color: #999;
+	border: 1px solid #999;
 	color: #fff;
 }
-
 
 .jetpack-social-navigation {
 	margin-bottom: 4.125em;
@@ -915,8 +917,12 @@ body {
 	text-align: center;
 }
 
-.custom-logo {
+.site-header .custom-logo {
+	height: auto;
 	margin-top: 1.75em;
+	max-height: 480px;
+	max-width: 480px;
+	width: auto;
 }
 
 .site-branding {
@@ -1168,6 +1174,7 @@ img.size-big,
 }
 
 .comment-list {
+	clear: both;
 	list-style: none;
 	padding-left: 0;
 }
@@ -1783,6 +1790,17 @@ object {
 	.entry-content > * {
 		margin: 0 auto 1.5em;
 		max-width: 660px;
+	}
+
+	.entry-content .jetpack-blog-display,
+	.entry-content .tiled-gallery,
+	.size-big-wrapper,
+	img.size-big,
+	.caption-big {
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
+		width: 100%;
 	}
 
 	.site-footer {

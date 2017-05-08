@@ -55,8 +55,8 @@ function no_filter_setup() {
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
 		'width'       => 240,
-		'flex-width'  => false,
-		'flex-height' => false,
+		'flex-width'  => true,
+		'flex-height' => true,
 	) );
 
 	/*
