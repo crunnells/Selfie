@@ -561,6 +561,13 @@ textarea {
 	width: 100%;
 }
 
+.contact-form textarea,
+.contact-form input[type="email"], 
+.contact-form input[type="text"] {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
 /*--------------------------------------------------------------
 # Buttons
 --------------------------------------------------------------*/
@@ -842,10 +849,15 @@ td {
 	color: #fff;
 }
 
+.comment-navigation {
+	margin-bottom: 1.5em;
+}
+
 .comment-navigation .nav-links a {
 	background: #fff;
 	border: 1px solid #999;
 	color: #999;
+	margin-bottom: 0;
 }
 
 .comment-navigation .nav-links a:hover {
@@ -929,8 +941,8 @@ body {
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	margin-top: 1.75em;
-	padding: 2em;
+	margin-top: 2.5em;
+	padding: 3em;
 }
 
 .site-title {
@@ -957,19 +969,19 @@ body {
 }
 
 .site-main {
-	padding: 1.75em 0 4.75em;
+	padding: 1.75em 0 3em;
 }
 
 .widget-area {
-	margin-top: 4em;
-	padding: 0 5%;
+	margin-top: 3em;
+	padding: 0 1.5em;
 }
 
 .site-footer {
 	color: #777;
 	font-size: 12px;
 	font-size: 0.75rem;
-	margin: 3.125em 0;
+	margin: 4em 0;
 }
 
 .site-info a:link,
@@ -1002,8 +1014,9 @@ body {
 	text-transform: uppercase;
 }
 
-.hentry {
-	margin: 0 0 5em;
+.hentry,
+.infinite-wrap {
+	margin: 0 0 3em;
 }
 
 .entry-header {
@@ -1014,7 +1027,7 @@ body {
 	font-size: 26px;
 	font-size: 1.625rem;
 	font-weight: 600;
-	margin: 0 0 2em;
+	margin: 0 0 1.84615345em;
 }
 
 .entry-title a {
@@ -1054,7 +1067,7 @@ body {
 .entry-content h5,
 .entry-content h6 {
 	margin-bottom: 1em;
-	margin-top: 2em;
+	margin-top: 1em;
 }
 
 .page-content > *,
@@ -1069,7 +1082,7 @@ body {
 .size-big-wrapper,
 img.size-big,
 .caption-big {
-	display: inline-block;
+	display: block;
 	float: none;
 	margin-left: 0;
 	margin-right: 0;
@@ -1163,13 +1176,14 @@ img.size-big,
 # Comments
 --------------------------------------------------------------*/
 .comments-area {
-	margin: 1.4375em auto 0;
+	margin: 4em auto 0;
 	padding: 0 1.5em;
 	text-align: left;
 }
 
 .comments-title {
 	font-weight: 400;
+	margin-bottom: 1.5em;
 	text-align: center;
 }
 
@@ -1280,6 +1294,10 @@ img.size-big,
 	text-decoration: none;
 }
 
+.form-submit {
+	margin-bottom: 0;
+}
+
 .comment-content a {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
@@ -1317,6 +1335,7 @@ img.size-big,
 
 .comment-reply-title {
 	font-weight: 600;
+	margin-bottom: 0;
 }
 
 .comment-reply-title small {
@@ -1699,35 +1718,31 @@ object {
 	}
 
 	.main-navigation ul ul {
-		background: #eee;
-		border-radius: 1em;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		background: #fff;
+		border: 1px solid rgba( 43, 117, 201, 0.25 );
 		float: left;
-		margin-left: -1em;
-		margin-top: 16px;
-		padding: 0.5em 1em;
 		position: absolute;
 		text-align: left;
-		top: 1em;
+		top: 2em;
 		left: -999em;
 		z-index: 99999;
 	}
 
 	.main-navigation ul ul:before {
-		border-color: transparent transparent #eee;
-		border-style: solid;
-		border-width: 0 6px 6px;
+		border: solid transparent;
+		border-bottom-color: #fff;
+		border-width: 6px;
 		bottom: auto;
 		content: '';
 		left: 20px;
 		position: absolute;
 		right: auto;
-		top: -6px;
+		top: -13px;
 	}
 
 	.main-navigation ul ul li {
-		line-height: 2;
 		padding-right: 0;
+		width: 200px;
 	}
 
 	.main-navigation ul ul li:after {
@@ -1735,13 +1750,20 @@ object {
 	}
 
 	.main-navigation ul ul a {
-		width: 200px;
+		line-height: 1.5;
+		padding: 0.7142857em 1em;
+		transition: 0.3s ease-in-out background-color;
+		word-break: break-all;
+	}
+
+	.main-navigation ul ul a:hover {
+		background-color: rgba(43, 117, 201, 0.25);
+		transition: 0.3s ease-in-out background-color;
 	}
 
 	.main-navigation ul ul li:hover > ul,
 	.main-navigation ul ul li.focus > ul {
 		left: 100%;
-		top: -1.5em;
 	}
 
 	.main-navigation ul li:hover > ul,
@@ -1751,31 +1773,17 @@ object {
 
 	.main-navigation ul ul ul {
 		left: -999em;
-		top: 0;
+		top: -1px;
 	}
 
-	.main-navigation ul ul ul:before {
-		background: #eee;
-		border-color: transparent;
-		border-width: 0;
-		box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
-		display: block;
-		height: 10px;
-		left: -5px;
-		top: 20px;
-		-webkit-transform: rotate(45deg);
-		transform: rotate(45deg);
-		width: 10px;
-	}
-
-	.main-navigation ul ul ul a:before {
-		content: none;
+	.main-navigation ul ul ul a {
+		line-height: 1.5;
 	}
 
 	.main-navigation .menu-item-has-children > a:after {
 		content: "\f431";
-		font-size: 12px;
-		font-size: 0.75rem;
+		font-size: 8px;
+		font-size: 0.5rem;
 		margin-left: 5px;
 	}
 
@@ -1838,8 +1846,7 @@ object {
 
 	.page-content,
 	.post-navigation,
-	.entry-summary,
-	.comments-area {
+	.entry-summary {
 		margin: 0 auto 3em;
 		padding: 0 2em;
 	}
@@ -1860,7 +1867,8 @@ object {
 	}
 
 	.comment-list,
-	.comment-respond {
+	.comment-respond,
+	.comment-navigation {
 		margin-left: auto;
 		margin-right: auto;
 		width: 660px;
@@ -1874,8 +1882,13 @@ object {
 		max-width: 660px;
 	}
 
-	.hentry {
+	.hentry,
+	.infinite-wrap {
 		margin-bottom: 7.25em;
+	}
+
+	.hentry:last-child {
+		margin-bottom: 0;
 	}
 
 	.post-thumbnail {
