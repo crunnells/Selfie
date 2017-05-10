@@ -1177,7 +1177,7 @@ img.size-big,
 --------------------------------------------------------------*/
 .comments-area {
 	margin: 4em auto 0;
-	padding: 0 1.5em;
+	padding: 0 5%;
 	text-align: left;
 }
 
@@ -1800,6 +1800,14 @@ object {
 		max-width: 660px;
 	}
 
+	.comment-list,
+	.comment-respond,
+	.comment-navigation {
+		margin-left: auto;
+		margin-right: auto;
+		width: 660px;
+	}
+
 	.entry-content .jetpack-blog-display,
 	.entry-content .tiled-gallery,
 	.size-big-wrapper,
@@ -1864,14 +1872,6 @@ object {
 		max-width: 660px;
 		width: 660px;
 		word-wrap: break-word;
-	}
-
-	.comment-list,
-	.comment-respond,
-	.comment-navigation {
-		margin-left: auto;
-		margin-right: auto;
-		width: 660px;
 	}
 
 	.comment-list .children {
