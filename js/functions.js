@@ -78,4 +78,21 @@
 		} );
 	}
 
+	/*
+	 * Apply classnames to visible content options
+	 */
+	var entry_meta = $( '.entry-meta' );
+	entry_meta.children( 'span' ).each( function() {
+
+		var height = $( this ).css( 'height' ),
+			width = $( this ).css( 'width' ),
+			overflow = $( this ).css( 'overflow' );
+
+		if ( height != '1px' && width != '1px' && overflow != 'hidden' ){
+			$( this ).addClass( 'visible' );
+		}
+	} );
+
+	$( '.visible' ).last().addClass( 'last' );
+
 } )( jQuery );

@@ -4,7 +4,7 @@ Theme URI: http://components.underscores.me/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: no-filter
@@ -1086,7 +1086,7 @@ img.size-big,
 	float: none;
 	margin-left: 0;
 	margin-right: 0;
-	width: auto;
+	width: 100%;
 }
 
 .page-content > :last-child,
@@ -1138,10 +1138,16 @@ img.size-big,
 	content: "#";
 }
 
-.entry-meta > span:not(:last-child):after {
+.entry-meta > span:not(:last-child):after,
+.entry-meta .visible:after {
 	color: #ccc;
 	content: " / ";
 	padding: 0 0.125em;
+}
+
+.entry-meta .visible.last:after {
+	content: '';
+	padding: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1199,8 +1205,7 @@ img.size-big,
 }
 
 .comment-list article {
-	padding: 1.5em 0 3em;
-	position: relative;
+	margin: 1.5em 0 3em;
 }
 
 .comment-list .pingback,
@@ -1210,19 +1215,17 @@ img.size-big,
 	text-align: center;
 }
 
+.comment-author {
+	line-height: 1.4;
+}
+
 .comment-author .avatar {
-	border-radius: 50%;
-	bottom: 3em;
-	position: absolute;
-	margin-top: 0.25em;
-	margin-right: 0.625em;
+	float: left;
+	margin-right: 0.75em;
 }
 
 .comment-author .fn {
 	color: #999;
-	left: 48px;
-	margin-left: 1em;
-	position: absolute;
 }
 
 .comment-author .fn a {
@@ -1234,14 +1237,11 @@ img.size-big,
 }
 
 .comment-metadata {
-	bottom: 2em;
 	font-size: 12px;
 	font-size: 0.75rem;
 	height: 1.5em;
-	left: 48px;
 	line-height: 1.5em;
 	margin-left: 1em;
-	position: absolute;
 }
 
 .comment-metadata a {
@@ -1259,34 +1259,12 @@ img.size-big,
 }
 
 .comment-content {
-	background: #e6e6ee;
-	border-radius: 1em;
-	display: inline-block;
-	margin-top: 1.5em;
-	margin-left: 48px;
-	padding: 0.75em 1em;
-}
-
-.comment-content:after {
-	border: 12px solid;
-	border-color: transparent transparent transparent #e6e6ee;
-	bottom: 2.5em;
-	content: ' ';
-	height: 0;
-	left: 48px;
-	position: absolute;
-	right: auto;
-	top: auto;
-	-webkit-transform: rotate(35deg);
-	transform: rotate(35deg);
-	width: 0;
+	margin: 1em 0;
 }
 
 .reply {
 	font-size: 12px;
 	font-size: 0.75rem;
-	position: absolute;
-	left: 0.25em;
 	margin-top: 0.5em;
 }
 
@@ -1309,19 +1287,6 @@ img.size-big,
 
 .comment-content > :last-child {
 	margin-bottom: 0;
-}
-
-.bypostauthor {
-	display: block;
-}
-
-.bypostauthor .comment-content {
-	background: #2b75c9;
-	color: #fff;
-}
-
-.bypostauthor .comment-content:after {
-	border-color: transparent transparent transparent #2b75c9;
 }
 
 .logged-in-as a:link,

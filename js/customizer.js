@@ -37,4 +37,36 @@
 			}
 		} );
 	} );
+
+	wp.customize( 'jetpack_content_post_details_date', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'posted-on', to );
+		} ) ;
+	} );
+
+	wp.customize( 'jetpack_content_post_details_categories', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'cat-links', to );
+		} ) ;
+	} );
+
+	wp.customize( 'jetpack_content_post_details_author', function( value ) {
+		value.bind( function( to ) {
+			entry_meta_last_class( 'byline', to );
+		} ) ;
+	} );
+
+	// Apply classnames to visible content options
+	function entry_meta_last_class( span, to ) {
+		$( '.entry-meta .visible' ).removeClass( 'last' );
+
+		if ( to == true ){
+			$( '.' + span ).addClass( 'visible' );
+		} else {
+			$( '.' + span ).removeClass( 'visible' );
+		}
+
+		$( '.entry-meta .visible' ).last().addClass( 'last' );
+	}
+
 } )( jQuery );
