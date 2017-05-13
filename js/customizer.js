@@ -38,6 +38,7 @@
 		} );
 	} );
 
+	// Show/hide post detail separators
 	wp.customize( 'jetpack_content_post_details_date', function( value ) {
 		value.bind( function( to ) {
 			entry_meta_last_class( 'posted-on', to );
@@ -58,15 +59,16 @@
 
 	// Apply classnames to visible content options
 	function entry_meta_last_class( span, to ) {
-		$( '.entry-meta .visible' ).removeClass( 'last' );
-
 		if ( to == true ){
 			$( '.' + span ).addClass( 'visible' );
 		} else {
 			$( '.' + span ).removeClass( 'visible' );
 		}
 
-		$( '.entry-meta .visible' ).last().addClass( 'last' );
+		$( '.entry-meta' ).each( function() {
+			$( this ).children( '.last' ).removeClass( 'last' );
+			$( this ).children( '.visible' ).last().addClass( 'last' );
+		} );
 	}
 
 } )( jQuery );

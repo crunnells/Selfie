@@ -2,7 +2,7 @@
 
 Requires at least: 4.7
 Tested up to: 4.7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
@@ -35,6 +35,9 @@ No Filter supports the following features:
 No Filter includes support for Jetpack's Infinite Scroll, Content Options, and Tiled Galleries.
 
 == Changelog ==
+
+= 1.0.4 - 05-12-2017 =
+* Fixed separator display .entry-meta on index and archive pages
 
 = 1.0.3 - 05-10-2017 =
 * Changed comment styling to better match the theme
