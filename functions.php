@@ -123,7 +123,7 @@ function no_filter_scripts() {
 	wp_enqueue_style( 'no-filter-fonts', no_filter_fonts_url() );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons-neue', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.css', array(), '4.0.5' );
+	wp_enqueue_style( 'no-filter-icons', get_template_directory_uri() . '/genericons-neue/Genericons-Neue.css', array(), '4.0.5' );
 
 	wp_enqueue_style( 'no-filter-style', get_stylesheet_uri() );
 
