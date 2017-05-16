@@ -207,6 +207,17 @@ ul, ol {
 	padding-right: 0;
 }
 
+/* Authors Widget */
+.widget_authors > ul,
+.widget.widget_authors li > ul {
+	padding-right: 0;
+}
+
+.widget.widget_authors .avatar {
+	margin-left: 5px;
+	margin-right: 0;
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
