@@ -31,24 +31,24 @@ function no_filter_jetpack_setup() {
 
 	// Add theme support for Content Options
 	add_theme_support( 'jetpack-content-options', array(
-	    'blog-display'			=> 'content',
-	    'author-bio'			=> false,
-	    'author-bio-default'	=> false,
-	    'post-details'			=> array(
-	        'stylesheet'		=> 'no-filter-style',
-	        'date'				=> '.posted-on',
-	        'categories'		=> '.cat-links',
-	        'tags'				=> '.entry-tags',
-	        'author'			=> '.byline',
-	    ),
-	    'featured-images'		=> array(
-	        'archive'			=> true,
-	        'archive-default'	=> false,
-	        'post'				=> true,
-	        'post-default'		=> false,
-	        'page'				=> true,
-	        'page-default'		=> false,
-	    ),
+		'blog-display'			=> 'content',
+		'author-bio'			=> false,
+		'author-bio-default'	=> false,
+		'post-details'			=> array(
+			'stylesheet'		=> 'no-filter-style',
+			'date'				=> '.posted-on',
+			'categories'		=> '.cat-links',
+			'tags'				=> '.entry-tags',
+			'author'			=> '.byline',
+		),
+		'featured-images'		=> array(
+			'archive'			=> true,
+			'archive-default'	=> false,
+			'post'				=> true,
+			'post-default'		=> false,
+			'page'				=> true,
+			'page-default'		=> false,
+		),
 	) );
 
 }

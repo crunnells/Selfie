@@ -4,7 +4,7 @@ Theme URI: http://components.underscores.me/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: no-filter
@@ -489,7 +489,8 @@ q:after {
 .menu-toggle::before,
 .main-navigation ul ul a:before,
 .main-navigation ul ul a:after,
-.main-navigation .menu-item-has-children > a:after {
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation ul .sub-menu ul a:before {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
@@ -562,7 +563,7 @@ textarea {
 }
 
 .contact-form textarea,
-.contact-form input[type="email"], 
+.contact-form input[type="email"],
 .contact-form input[type="text"] {
 	max-width: 100% !important;
 	width: 100% !important;
@@ -932,8 +933,8 @@ body {
 .site-header .custom-logo {
 	height: auto;
 	margin-top: 1.75em;
-	max-height: 480px;
-	max-width: 480px;
+	max-height: 90%;
+	max-width: 90%;
 	width: auto;
 }
 
@@ -1403,13 +1404,26 @@ img.size-big,
 	line-height: 1.5;
 	margin-bottom: 1.5em;
 }
+
 .widget_rss a {
 	display: block;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 600;
+}
+
+.widget_rss .widget-title a {
+	display: inline;
 }
 
 .widget_rss .rss-date {
 	color: #aaa;
+	font-size: 13px;
+	font-size: 0.8125rem;
+}
+
+.widget_rss .rssSummary {
+	margin: 0.5em 0;
 }
 
 .widget_rss cite {
@@ -1430,6 +1444,19 @@ img.size-big,
 /* Social Media Icons Widget */
 .widget_wpcom_social_media_icons_widget a:hover {
 	text-decoration: none;
+}
+
+/* JetPack Remote Posts */
+.widget_jetpack_display_posts_widget .jetpack-display-remote-posts h4 {
+	font-size: 16px;
+	font-size: 1rem;
+	margin: 0 0 0.5em;
+}
+
+.widget_jetpack_display_posts_widget .jetpack-display-remote-posts p {
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin-bottom: 1.5em !important;
 }
 
 /*--------------------------------------------------------------
@@ -1462,6 +1489,11 @@ img.size-big,
 	margin: 0 auto 4em;
 	position: relative;
 	width: 36px;
+	z-index: 1;
+}
+
+#infinite-footer {
+	z-index: 2;
 }
 
 /*--------------------------------------------------------------
@@ -1629,6 +1661,11 @@ object {
 --------------------------------------------------------------*/
 /* ## >= 400px */
 @media screen and (min-width: 400px) {
+	.site-header .custom-logo {
+		max-height: 480px;
+		max-width: 480px;
+	}
+
 	.comment-navigation .nav-previous,
 	.posts-navigation .nav-previous,
 	.post-navigation .nav-previous {
@@ -1644,6 +1681,10 @@ object {
 		text-align: right;
 		width: 50%;
 	}
+}
+
+/* ## >= 528px */
+@media screen and (min-width: 528px) {
 }
 
 /* ## >= 726px */
@@ -1693,18 +1734,6 @@ object {
 		z-index: 99999;
 	}
 
-	.main-navigation ul ul:before {
-		border: solid transparent;
-		border-bottom-color: #fff;
-		border-width: 6px;
-		bottom: auto;
-		content: '';
-		left: 20px;
-		position: absolute;
-		right: auto;
-		top: -13px;
-	}
-
 	.main-navigation ul ul li {
 		padding-right: 0;
 		width: 200px;
@@ -1718,7 +1747,7 @@ object {
 		line-height: 1.5;
 		padding: 0.7142857em 1em;
 		transition: 0.3s ease-in-out background-color;
-		word-break: break-all;
+		word-break: break-word;
 	}
 
 	.main-navigation ul ul a:hover {
@@ -1743,6 +1772,11 @@ object {
 
 	.main-navigation ul ul ul a {
 		line-height: 1.5;
+	}
+
+	.main-navigation ul ul ul a:before {
+		content: '';
+		display: none;
 	}
 
 	.main-navigation .menu-item-has-children > a:after {
