@@ -14,6 +14,7 @@ https://codex.wordpress.org/Right_to_Left_Languagecomponentsupport
 ----------------------------------------------------------------
 # Accessibility
 # Alignments
+# Genericons Neue
 # Forms
 # Buttons
 # Lists
@@ -106,8 +107,8 @@ ul, ol {
 
 .main-navigation ul .sub-menu ul a:before {
 	content: "\f432";
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 8px;
+	font-size: 0.5rem;
 	margin-top: -8px;
 	padding-right: 4px;
 	-webkit-transform: rotate(270deg);
@@ -194,6 +195,10 @@ ul, ol {
 
 .widget ul {
 	padding-right: 0;
+}
+
+.widget ul ul {
+	padding-right: 20px;
 }
 
 /* Tag Cloud widget */
@@ -323,6 +328,10 @@ ul, ol {
 		padding-right: 0;
 	}
 
+	.main-navigation .menu > li:last-child {
+		padding-left: 0;
+	}
+
 	.main-navigation ul ul {
 		float: right;
 		left: auto;
@@ -367,29 +376,24 @@ ul, ol {
 		display: none;
 	}
 
-	.main-navigation .menu-item-has-children > a:after {
+	.main-navigation ul .menu-item-has-children > a:after {
 		content: "\f431";
-		font-size: 12px;
-		font-size: 0.75rem;
+		font-size: 8px;
+		font-size: 0.5rem;
 		margin-left: auto;
 		margin-right: 5px;
 	}
 
-	.main-navigation .sub-menu .menu-item-has-children > a:after {
+	.main-navigation ul .sub-menu .menu-item-has-children > a:after {
 		margin-left: 0;
 		margin-right: 0.5em;
 		-webkit-transform: rotate(90deg);
 		transform: rotate(90deg);
 	}
-
-	.main-navigation .sub-menu .sub-menu .menu-item-has-children > a:after {
-		-webkit-transform: rotate(-90deg);
-		transform: rotate(-90deg);
-	}
 }
 
 /* >= 1100 */
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 1000px) {
 	.widget {
 		margin-left: 0;
 		margin-right: 35px;

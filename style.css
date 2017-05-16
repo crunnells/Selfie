@@ -489,8 +489,9 @@ q:after {
 .menu-toggle::before,
 .main-navigation ul ul a:before,
 .main-navigation ul ul a:after,
+.main-navigation ul .sub-menu ul a:before,
 .main-navigation .menu-item-has-children > a:after,
-.main-navigation ul .sub-menu ul a:before {
+.main-navigation .sub-menu .menu-item-has-children > a:after {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	display: inline-block;
@@ -735,14 +736,6 @@ td {
 
 .main-navigation li {
 	display: block;
-}
-
-.main-navigation li:after {
-	content: "\002f";
-	opacity: 0.5;
-	position: absolute;
-	right: 5px;
-	top: 0;
 }
 
 .main-navigation li:last-child {
@@ -1683,10 +1676,6 @@ object {
 	}
 }
 
-/* ## >= 528px */
-@media screen and (min-width: 528px) {
-}
-
 /* ## >= 726px */
 @media screen and (min-width: 726px) {
 
@@ -1708,6 +1697,14 @@ object {
 		line-height: 2;
 		padding-right: 1.142857em;
 		position: relative;
+	}
+
+	.main-navigation li:after {
+		content: "\002f";
+		opacity: 0.5;
+		position: absolute;
+		right: 5px;
+		top: 0;
 	}
 
 	.main-navigation .menu > li {
@@ -1747,7 +1744,7 @@ object {
 		line-height: 1.5;
 		padding: 0.7142857em 1em;
 		transition: 0.3s ease-in-out background-color;
-		word-break: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.main-navigation ul ul a:hover {
@@ -1787,6 +1784,8 @@ object {
 	}
 
 	.main-navigation .sub-menu .menu-item-has-children > a:after {
+		font-size: 8px;
+		font-size: 0.5rem;
 		line-height: 1.33;
 		margin-left: 0.5em;
 		-webkit-transform: rotate(-90deg);
