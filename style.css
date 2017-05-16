@@ -779,10 +779,10 @@ td {
 	line-height: 1.8;
 }
 
-.main-navigation ul ul ul a:before {
+.main-navigation ul .sub-menu ul a:before {
 	content: "\f432";
-	font-size: 12px;
-	font-size: 0.75rem;
+	font-size: 8px;
+	font-size: 0.5rem;
 	margin-top: -4px;
 	-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);
@@ -1774,7 +1774,7 @@ object {
 		line-height: 1.5;
 	}
 
-	.main-navigation ul ul ul a:before {
+	.main-navigation ul .sub-menu ul a:before {
 		content: '';
 		display: none;
 	}
