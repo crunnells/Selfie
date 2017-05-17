@@ -4,7 +4,7 @@ Theme URI: http://components.underscores.me/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: no-filter
@@ -1376,7 +1376,6 @@ img.size-big,
 
 .widget ul ul {
 	padding-left: 20px;
-	padding-left: 1.25rem;
 }
 
 /* Tag Cloud widget */
@@ -1450,6 +1449,12 @@ img.size-big,
 	font-size: 14px;
 	font-size: 0.875rem;
 	margin-bottom: 1.5em !important;
+}
+
+/* Author widget */
+.widget_authors > ul,
+.widget.widget_authors li > ul {
+	margin-left: 0 !important;
 }
 
 /*--------------------------------------------------------------
@@ -1537,15 +1542,6 @@ object {
 .wp-caption.aligncenter {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-/* Give some padding to floated elements, to prevent them butting up against text. */
-.wp-caption.alignleft {
-	margin-right: 20px;
-}
-
-.wp-caption.alignright {
-	margin-left: 20px;
 }
 
 .wp-caption.caption-big.alignleft {
