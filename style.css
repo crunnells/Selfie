@@ -926,7 +926,7 @@ body {
 .site-header .custom-logo {
 	height: auto;
 	margin-top: 1.75em;
-	max-height: 90%;
+	max-height: 480px;
 	max-width: 90%;
 	width: auto;
 }
@@ -1650,11 +1650,6 @@ object {
 --------------------------------------------------------------*/
 /* ## >= 400px */
 @media screen and (min-width: 400px) {
-	.site-header .custom-logo {
-		max-height: 480px;
-		max-width: 480px;
-	}
-
 	.comment-navigation .nav-previous,
 	.posts-navigation .nav-previous,
 	.post-navigation .nav-previous {
@@ -1669,6 +1664,13 @@ object {
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+/* ## >= 533px */
+@media screen and (min-width: 533px) {
+	.site-header .custom-logo {
+		max-width: 480px;
 	}
 }
 
