@@ -43,11 +43,11 @@ function no_filter_jetpack_setup() {
 		),
 		'featured-images'		=> array(
 			'archive'			=> true,
-			'archive-default'	=> false,
+			'archive-default'	=> true,
 			'post'				=> true,
-			'post-default'		=> false,
+			'post-default'		=> true,
 			'page'				=> true,
-			'page-default'		=> false,
+			'page-default'		=> true,
 		),
 	) );
 
