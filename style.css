@@ -1800,7 +1800,8 @@ object {
 
 	.comment-list,
 	.comment-respond,
-	.comment-navigation {
+	.comment-navigation,
+	.entry-content .wp-playlist {
 		margin-left: auto;
 		margin-right: auto;
 		width: 660px;
