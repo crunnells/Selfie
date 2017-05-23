@@ -1052,6 +1052,7 @@ body {
 .entry-summary {
 	margin: 1.4375em auto;
 	text-align: left;
+	word-wrap: break-word;
 }
 
 .entry-content h1,
@@ -1064,28 +1065,23 @@ body {
 	margin-top: 1em;
 }
 
-.page-content > *,
-.entry-content > * {
+.page-content,
+.entry-content {
 	margin: 0 5% 1.5em;
-}
-
-.mejs-container {
-	max-width: 90%;
-}
-
-.size-big-wrapper,
-img.size-big,
-.caption-big {
-	display: block;
-	float: none;
-	margin-left: 0;
-	margin-right: 0;
-	width: 100%;
 }
 
 .page-content > :last-child,
 .entry-content > :last-child {
 	margin-bottom: 0;
+}
+
+img.size-big,
+.caption-big {
+	display: inline-block;
+	float: none;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
 }
 
 .attachment {
@@ -1538,20 +1534,6 @@ object {
 	margin: 0.7142857em 0;
 }
 
-/* Ensure center-aligned captions center-align properly. */
-.wp-caption.aligncenter {
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.wp-caption.caption-big.alignleft {
-	margin-right: 0;
-}
-
-.wp-caption.caption-big.alignright {
-	margin-left: 0;
-}
-
 .wp-caption-text {
 	text-align: center;
 }
@@ -1791,8 +1773,8 @@ object {
 	}
 
 	.site-description,
-	.page-content > *,
-	.entry-content > *,
+	.page-content,
+	.entry-content,
 	.entry-footer {
 		margin: 0 auto 1.5em;
 		max-width: 660px;
@@ -1800,18 +1782,17 @@ object {
 
 	.comment-list,
 	.comment-respond,
-	.comment-navigation,
-	.entry-content .wp-playlist {
+	.comment-navigation {
 		margin-left: auto;
 		margin-right: auto;
 		width: 660px;
 	}
 
 	.entry-content .jetpack-blog-display,
-	.entry-content .tiled-gallery,
-	.size-big-wrapper,
+	.entry-content .tiled-gallery-wrapper,
 	img.size-big,
-	.caption-big {
+	.caption-big,
+	.caption-big.aligncenter {
 		margin-left: 0;
 		margin-right: 0;
 		max-width: 100%;
@@ -1859,26 +1840,15 @@ object {
 	}
 
 	.page-content,
-	.entry-content {
-		margin: 0 0 3em;
-		width: 1000px;
-	}
-
-	.page-content > *,
-	.entry-content > *,
-	.jetpack-blog-display > * {
-		margin: 0 170px 1.5em;
+	.entry-content,
+	.jetpack-blog-display {
+		margin: 0 170px 3em;
 		max-width: 660px;
 		width: 660px;
-		word-wrap: break-word;
 	}
 
 	.comment-list .children {
 		padding-left: 2em;
-	}
-
-	.mejs-container {
-		max-width: 660px;
 	}
 
 	.hentry,
@@ -1895,11 +1865,13 @@ object {
 	}
 
 	.entry-content .jetpack-blog-display,
-	.entry-content .tiled-gallery,
-	.size-big-wrapper,
+	.entry-content .tiled-gallery-wrapper,
 	img.size-big,
-	.caption-big {
-		margin-left: 0;
+	.caption-big,
+	.caption-big.aligncenter,
+	.caption-big.alignleft,
+	.caption-big.alignright {
+		margin-left: -170px;
 		margin-right: 0;
 		max-width: 1000px;
 		width: 1000px;
