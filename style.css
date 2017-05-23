@@ -426,7 +426,7 @@ i {
 blockquote {
 	border-left: 3px solid #ccc;
 	padding-left: .75em;
-	margin: 0 1.5em;
+	margin: 0 1.5em 1.5em;
 }
 
 address {
@@ -1010,7 +1010,7 @@ body {
 
 .hentry,
 .infinite-wrap {
-	margin: 0 0 3em;
+	margin: 0 0 4em;
 }
 
 .entry-header {
@@ -1021,7 +1021,8 @@ body {
 	font-size: 26px;
 	font-size: 1.625rem;
 	font-weight: 600;
-	margin: 0 0 1.84615345em;
+	margin: 0 0 1.384615em;
+	word-wrap: break-word;
 }
 
 .entry-title a {
@@ -1184,18 +1185,31 @@ img.size-big,
 }
 
 .comment-list {
+	border-top: 1px solid #ccc;
 	clear: both;
 	list-style: none;
 	padding-left: 0;
 }
 
+.comment-list li {
+	padding: 1.5em 0;
+}
+
+.comment-list .parent {
+	padding-bottom: 0;
+}
+
+.comment-list > li {
+	border-bottom: 1px solid #ccc;
+}
+
 .comment-list .children {
 	list-style: none;
 	padding-left: 1em;
+	padding-top: 1.5em;
 }
 
 .comment-list article {
-	margin: 1.5em 0 3em;
 }
 
 .comment-list .pingback,
@@ -1212,10 +1226,6 @@ img.size-big,
 .comment-author .avatar {
 	float: left;
 	margin-right: 0.75em;
-}
-
-.comment-author .fn {
-	color: #999;
 }
 
 .comment-author .fn a {
@@ -1780,11 +1790,10 @@ object {
 		max-width: 660px;
 	}
 
-	.comment-list,
-	.comment-respond,
-	.comment-navigation {
+	.comments-area {
 		margin-left: auto;
 		margin-right: auto;
+		padding: 0;
 		width: 660px;
 	}
 
