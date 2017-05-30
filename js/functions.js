@@ -11,6 +11,7 @@
 	$window.load( function() {
 		galleryWrapper();
 		outdentImages();
+		entryMetaSeparators();
 	} );
 
 	// On window resize
@@ -22,6 +23,7 @@
 	$window.on( 'post-load', function() {
 		galleryWrapper();
 		outdentImages();
+		entryMetaSeparators();
 	} );
 
 	/*
@@ -96,17 +98,19 @@
 	/*
 	 * Apply classnames to visible content options
 	 */
-	$( '.entry-meta' ).each( function() {
-		$( this ).children( 'span' ).each( function() {
-			var height = $( this ).css( 'height' ),
-				width = $( this ).css( 'width' ),
-				overflow = $( this ).css( 'overflow' );
-
-			if ( height != '1px' && width != '1px' && overflow != 'hidden' ){
-				$( this ).addClass( 'visible' );
-			}
+	function entryMetaSeparators() {
+		$( '.entry-meta' ).each( function() {
+			$( this ).children( 'span' ).each( function() {
+				var height = $( this ).css( 'height' ),
+					width = $( this ).css( 'width' ),
+					overflow = $( this ).css( 'overflow' );
+	
+				if ( height != '1px' && width != '1px' && overflow != 'hidden' ){
+					$( this ).addClass( 'visible' );
+				}
+			} );
+			$( this ).children( '.visible' ).last().addClass( 'last' );
 		} );
-		$( this ).children( '.visible' ).last().addClass( 'last' );
-	} );
+	}
 
 } )( jQuery );
