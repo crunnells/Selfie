@@ -2,7 +2,7 @@
 
 Requires at least: 4.7
 Tested up to: 4.7.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: clean, light, minimal, simple, classic-menu, custom-background, custom-header, custom-menu, editor-style, featured-images, infinite-scroll, site-logo, social-menu, sticky-post, threaded-comments, translation-ready, blog, photoblogging, photography, white, blue, responsive-layout, one-column
@@ -35,6 +35,10 @@ No Filter supports the following features:
 No Filter includes support for Jetpack's Infinite Scroll, Content Options, and Tiled Galleries.
 
 == Changelog ==
+
+= 1.0.9 - 05-31-2017 =
+* Changed single footer widget area into three separate footer areas.
+* Moved Custom Logo position inside .site-branding
 
 = 1.0.8 - 05-23-2017 =
 * Changed CSS related to .entry-content and displaying large images to avoid using `.entry-content > *`
@@ -76,4 +80,4 @@ No Filter includes support for Jetpack's Infinite Scroll, Content Options, and T
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Google Fonts "Catamaran" and "Nunito Sans" are licensed under the SIL Open Font License, Version 1.1; Source: https://www.google.com/fonts/specimen/Catamaran https://fonts.google.com/specimen/Nunito+Sans
 * Genericons Neue https://github.com/Automattic/genericons-neue, (C) 2013-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* Images used in screenshot.png: Photos by adrian (@aows) (https://unsplash.com/?photo=1jtBE_ZEkwo & https://unsplash.com/@aows?photo=zkd9FIEFUk8), [CC0](http://creativecommons.org/publicdomain/zero/1.0/)
+* Images used in screenshot.png: Photos by Clem Onojeghuo (@clemono2) (http://unsplash.com/photos/fY8Jr4iuPQM), [CC0](http://creativecommons.org/publicdomain/zero/1.0/)

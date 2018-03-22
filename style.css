@@ -4,7 +4,7 @@ Theme URI: http://components.underscores.me/
 Author: Automattic
 Author URI: http://worpress.com/themes/
 Description: No Filter is a photo-focused theme for phone photographers to showcase their latest shots. The one-column layout emphasizes photos over content, so that your images are always the central focus.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: no-filter
@@ -338,7 +338,9 @@ th {
 .site-content:before,
 .site-content:after,
 .site-footer:before,
-.site-footer:after {
+.site-footer:after,
+.widget-area:before,
+.widget-area:after {
 	content: "";
 	display: table;
 	table-layout: fixed;
@@ -350,7 +352,8 @@ th {
 .navigation:after,
 .site-header:after,
 .site-content:after,
-.site-footer:after {
+.site-footer:after,
+.widget-area:after {
 	clear: both;
 }
 
@@ -925,7 +928,7 @@ body {
 
 .site-header .custom-logo {
 	height: auto;
-	margin-top: 2.5em;
+	margin-bottom: 2.5em;
 	max-height: 480px;
 	max-width: 90%;
 	width: auto;
@@ -1465,6 +1468,13 @@ img.size-big,
 	margin-left: 0 !important;
 }
 
+/* Calendar widget */
+.widget_calendar table caption {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 3;
+}
+
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1481,7 +1491,7 @@ img.size-big,
 }
 
 #main #infinite-handle span {
-	background: #2b75c9;
+	background-color: #2b75c9;
 	border-radius: 5px;
 	color: #fff;
 	display: inline-block;
@@ -1891,6 +1901,21 @@ object {
 		padding: 0;
 	}
 
+	#sidebar-1,
+	#sidebar-2,
+	#sidebar-3 {
+		display: inline-block;
+		width: 300px;
+	}
+
+	#sidebar-1 {
+		float: left;
+	}
+
+	#sidebar-3 {
+		float: right;
+	}
+
 	.widget {
 		display: inline-block;
 		margin-bottom: 3.5em;
@@ -1900,14 +1925,5 @@ object {
 
 	.widget-gallery .tiled-gallery {
 		width: 300px;
-	}
-
-	.widget {
-		margin-left: 35px;
-	}
-
-	.widget:nth-child(1),
-	.widget:nth-child(3n + 1) {
-		margin-left: 0;
 	}
 }

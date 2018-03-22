@@ -104,9 +104,29 @@ add_action( 'after_setup_theme', 'no_filter_content_width', 0 );
  */
 function no_filter_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer', 'no-filter' ),
+		'name'          => esc_html__( 'Footer Left', 'no-filter' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( '3-column widget area.', 'no-filter' ),
+		'description'   => esc_html__( 'Left column widget area.', 'no-filter' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Middle', 'no-filter' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Middle column widget area.', 'no-filter' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Right', 'no-filter' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Right column widget area.', 'no-filter' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

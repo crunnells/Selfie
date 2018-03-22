@@ -28,8 +28,6 @@
 
 		<?php get_template_part( 'components/navigation/navigation', 'top' ); ?>
 
-		<?php the_custom_logo(); ?>
-
 		<?php get_template_part( 'components/header/site', 'branding' ); ?>
 
 	</header>
